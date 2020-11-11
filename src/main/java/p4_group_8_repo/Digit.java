@@ -3,17 +3,17 @@ package p4_group_8_repo;
 import javafx.scene.image.Image;
 
 public class Digit extends Actor{
-	int dim;
-	Image im1;
+	int dimensions;
+	Image image1;
 	@Override
 	public void act(long now) {
 		// TODO Auto-generated method stub
 		
 	}
 	
-	public Digit(int n, int dim, int x, int y) {
-		im1 = new Image("file:src/main/resources/"+n+".png", dim, dim, true, true);
-		setImage(im1);
+	public Digit(int n, int dimensions, int x, int y) {
+		image1 = new Image("file:src/main/resources/"+n+".png", dimensions, dimensions, true, true);
+		setImage(image1);
 		setX(x);
 		setY(y);
 	}
