@@ -4,6 +4,7 @@ import javafx.scene.image.Image;
 
 public class BackgroundImage extends Actor{
 
+	//Constructor
 	public BackgroundImage(String imageLink) {
 		
 		setImage(new Image(imageLink, 600, 800, true, true));
