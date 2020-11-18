@@ -2,15 +2,16 @@ package p4_group_8_repo;
 
 import javafx.scene.image.Image;
 
-public class Obstacle extends Actor {
+public abstract class Obstacle extends Actor {
 	private int speed;
 	
 	//Constructor
-	public Obstacle(String imageLink, int x, int y, int speed, int width, int height) {
-		setImage(new Image(imageLink, width, height, true, true));
+	public Obstacle(int x, int y, int speed) {
+
 		setX(x);
 		setY(y);
 		this.speed = speed;
+		
 	}
 
 	//Action when method called
