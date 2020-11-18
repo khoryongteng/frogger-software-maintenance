@@ -27,11 +27,11 @@ public class Animal extends Actor {
 	int imgSize = 40;
 	boolean carDeath = false;
 	boolean waterDeath = false;
-	boolean stop = false;
 	boolean changeScore = false;
-	int carD = 0;
+	int deathFrame = 0;
 	double w = 800;
 	ArrayList<End> inter = new ArrayList<End>();
+	
 	public Animal(String imageLink) {
 		setImage(new Image(imageLink, imgSize, imgSize, true, true));
 		setX(300);
@@ -44,96 +44,144 @@ public class Animal extends Actor {
 		imgA2 = new Image("file:src/main/resources/froggerLeftJump.png", imgSize, imgSize, true, true);
 		imgS2 = new Image("file:src/main/resources/froggerDownJump.png", imgSize, imgSize, true, true);
 		imgD2 = new Image("file:src/main/resources/froggerRightJump.png", imgSize, imgSize, true, true);
+		keyListener();
+		
+	}
+	
+	//Key press detection
+	private void keyListener() {
+		
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
+			
 			public void handle(KeyEvent event){
-				if (noMove) {
-					
-				}
-				else {
-				if (second) {
-					if (event.getCode() == KeyCode.W) {	  
-		                move(0, -movement);
-		                changeScore = false;
-		                setImage(imgW1);
-		                second = false;
-		            }
-		            else if (event.getCode() == KeyCode.A) {	            	
-		            	 move(-movementX, 0);
-		            	 setImage(imgA1);
-		            	 second = false;
-		            }
-		            else if (event.getCode() == KeyCode.S) {	            	
-		            	 move(0, movement);
-		            	 setImage(imgS1);
-		            	 second = false;
-		            }
-		            else if (event.getCode() == KeyCode.D) {	            	
-		            	 move(movementX, 0);
-		            	 setImage(imgD1);
-		            	 second = false;
-		            }
-				}
-				else if (event.getCode() == KeyCode.W) {	            	
-	                move(0, -movement);
-	                setImage(imgW2);
-	                second = true;
-	            }
-	            else if (event.getCode() == KeyCode.A) {	            	
-	            	 move(-movementX, 0);
-	            	 setImage(imgA2);
-	            	 second = true;
-	            }
-	            else if (event.getCode() == KeyCode.S) {	            	
-	            	 move(0, movement);
-	            	 setImage(imgS2);
-	            	 second = true;
-	            }
-	            else if (event.getCode() == KeyCode.D) {	            	
-	            	 move(movementX, 0);
-	            	 setImage(imgD2);
-	            	 second = true;
-	            }
-	        }
-			}
-		});	
-		setOnKeyReleased(new EventHandler<KeyEvent>() {
-			public void handle(KeyEvent event) {
-				if (noMove) {}
-				else {
-				if (event.getCode() == KeyCode.W) {	  
-					if (getY() < w) {
-						changeScore = true;
-						w = getY();
-						points+=10;
-					}
-	                move(0, -movement);
-	                setImage(imgW1);
-	                second = false;
-	            }
-	            else if (event.getCode() == KeyCode.A) {	            	
-	            	 move(-movementX, 0);
-	            	 setImage(imgA1);
-	            	 second = false;
-	            }
-	            else if (event.getCode() == KeyCode.S) {	            	
-	            	 move(0, movement);
-	            	 setImage(imgS1);
-	            	 second = false;
-	            }
-	            else if (event.getCode() == KeyCode.D) {	            	
-	            	 move(movementX, 0);
-	            	 setImage(imgD1);
-	            	 second = false;
-	            }
-	        }
+				
+				playerControls(event);
+				
 			}
 			
 		});
+		setOnKeyReleased(new EventHandler<KeyEvent>() {
+			public void handle(KeyEvent event) {
+				
+				playerControls(event);
+				
+			}
+			
+		});
+		
+		
 	}
 	
+	//Player Controls
+	private void playerControls(KeyEvent event) {
+		
+		if (noMove) {
+			
+		}
+		else {
+			
+			switch (event.getCode()) {
+			
+				case W: 
+					move(0, -movement);
+	                animalAnimation(second, 'W');
+	                if (second) {
+	                	
+	                	changeScore = false;
+	                	
+	                }
+	                else {
+	                	
+	                	if (getY() < w) {
+							changeScore = true;
+							w = getY();
+							points+=10;
+						}
+	                	
+	                }
+	                break;
+	                
+				case A:
+					move(-movementX, 0);
+					animalAnimation(second, 'A');
+	            	break;
+	            	
+				case S:
+					move(0, movement);
+					animalAnimation(second, 'S');
+	            	break;
+	            	
+				case D:
+					move(movementX, 0);
+					animalAnimation(second, 'D');
+	            	break;
+					
+			}
+			
+		}
+		
+	}
+	
+	//Animation
+	private void animalAnimation(boolean second, char key){
+		
+		if (second) {
+			
+			switch(key) {
+			
+				case 'W':
+					setImage(imgW1);
+					break;
+				case 'A':
+					setImage(imgA1);
+					break;
+				case 'S':
+					setImage(imgS1);
+					break;
+				case 'D':
+					setImage(imgD1);
+					break;
+			}	
+			
+			this.second = false;
+			
+		}
+		else {
+			
+			switch(key) {
+			
+				case 'W':
+					setImage(imgW2);
+					break;
+				case 'A':
+					setImage(imgA2);
+					break;
+				case 'S':
+					setImage(imgS2);
+					break;
+				case 'D':
+					setImage(imgD2);
+					break;
+			}	
+			
+			this.second = true;
+				
+		}
+		
+	}
+	
+	//Method called every tick when AnimationTimer is running
 	@Override
 	public void act(long now) {
-		int bounds = 0;
+
+		KeepWithinWindow();
+		ObjectInteraction();
+		DeathProcess(now);
+		
+	}
+	
+	private void KeepWithinWindow() {
+		
 		if (getY()<0 || getY()>734) {
 			setX(300);
 			setY(679.8+movement);
@@ -141,74 +189,16 @@ public class Animal extends Actor {
 		if (getX()<0) {
 			move(movement*2, 0);
 		}
-		if (carDeath) {
-			noMove = true;
-			if ((now)% 11 ==0) {
-				carD++;
-			}
-			if (carD==1) {
-				setImage(new Image("file:src/main/resources/cardeath1.png", imgSize, imgSize, true, true));
-			}
-			if (carD==2) {
-				setImage(new Image("file:src/main/resources/cardeath2.png", imgSize, imgSize, true, true));
-			}
-			if (carD==3) {
-				setImage(new Image("file:src/main/resources/cardeath3.png", imgSize, imgSize, true, true));
-			}
-			if (carD == 4) {
-				setX(300);
-				setY(679.8+movement);
-				carDeath = false;
-				carD = 0;
-				setImage(new Image("file:src/main/resources/froggerUp.png", imgSize, imgSize, true, true));
-				noMove = false;
-				if (points>50) {
-					points-=50;
-					changeScore = true;
-				}
-			}
-			
-		}
-		if (waterDeath) {
-			noMove = true;
-			if ((now)% 11 ==0) {
-				carD++;
-			}
-			if (carD==1) {
-				setImage(new Image("file:src/main/resources/waterdeath1.png", imgSize,imgSize , true, true));
-			}
-			if (carD==2) {
-				setImage(new Image("file:src/main/resources/waterdeath2.png", imgSize,imgSize , true, true));
-			}
-			if (carD==3) {
-				setImage(new Image("file:src/main/resources/waterdeath3.png", imgSize,imgSize , true, true));
-			}
-			if (carD == 4) {
-				setImage(new Image("file:src/main/resources/waterdeath4.png", imgSize,imgSize , true, true));
-			}
-			if (carD == 5) {
-				setX(300);
-				setY(679.8+movement);
-				waterDeath = false;
-				carD = 0;
-				setImage(new Image("file:src/main/resources/froggerUp.png", imgSize, imgSize, true, true));
-				noMove = false;
-				if (points>50) {
-					points-=50;
-					changeScore = true;
-				}
-			}
-			
-		}
-		
 		if (getX()>600) {
 			move(-movement*2, 0);
 		}
+		
+	}
+	
+	private void ObjectInteraction() {
+		
 		if (getIntersectingObjects(Obstacle.class).size() >= 1) {
 			carDeath = true;
-		}
-		if (getX() == 240 && getY() == 82) {
-			stop = true;
 		}
 		if (getIntersectingObjects(Log.class).size() >= 1 && !noMove) {
 			if(getIntersectingObjects(Log.class).get(0).getLeft())
@@ -232,28 +222,103 @@ public class Animal extends Actor {
 				end--;
 				points-=50;
 			}
-			points+=50;
-			changeScore = true;
-			w=800;
 			getIntersectingObjects(End.class).get(0).setEnd();
-			end++;
-			setX(300);
-			setY(679.8+movement);
+			respawn(true);
 		}
 		else if (getY()<413){
 			waterDeath = true;
-			//setX(300);
-			//setY(679.8+movement);
+		}
+		
+	}
+	
+	private void DeathProcess(long now) {
+		
+		if (carDeath) {
+			noMove = true;
+			if ((now)% 11 == 0) {
+				deathFrame++;
+			}
+			if (deathFrame==1) {
+				setImage(new Image("file:src/main/resources/cardeath1.png", imgSize, imgSize, true, true));
+			}
+			if (deathFrame==2) {
+				setImage(new Image("file:src/main/resources/cardeath2.png", imgSize, imgSize, true, true));
+			}
+			if (deathFrame==3) {
+				setImage(new Image("file:src/main/resources/cardeath3.png", imgSize, imgSize, true, true));
+			}
+			if (deathFrame == 4) {
+				
+				respawn(false);
+				
+			}
+			
+		}
+		if (waterDeath) {
+			noMove = true;
+			if ((now)% 11 ==0) {
+				deathFrame++;
+			}
+			if (deathFrame==1) {
+				setImage(new Image("file:src/main/resources/waterdeath1.png", imgSize,imgSize , true, true));
+			}
+			if (deathFrame==2) {
+				setImage(new Image("file:src/main/resources/waterdeath2.png", imgSize,imgSize , true, true));
+			}
+			if (deathFrame==3) {
+				setImage(new Image("file:src/main/resources/waterdeath3.png", imgSize,imgSize , true, true));
+			}
+			if (deathFrame == 4) {
+				setImage(new Image("file:src/main/resources/waterdeath4.png", imgSize,imgSize , true, true));
+			}
+			if (deathFrame == 5) {
+				
+				respawn(false);
+				
+			}
+		}
+		
+	}
+	
+	private void respawn(boolean goalReached) {
+		
+		setX(300);
+		setY(679.8+movement);
+		
+		if (goalReached) {
+			
+			points+=50;
+			changeScore = true;
+			w=800;
+			end++;
+			
+		}
+		else {
+			
+			waterDeath = false;
+			carDeath = false;
+			deathFrame = 0;
+			setImage(new Image("file:src/main/resources/froggerUp.png", imgSize, imgSize, true, true));
+			noMove = false;
+			if (points>50) {
+				points-=50;
+				changeScore = true;
+			}
+			
 		}
 	}
+	
+	//Determine if game end conditions are met
 	public boolean getStop() {
 		return end==5;
 	}
 	
+	//Return points acquired by player
 	public int getPoints() {
 		return points;
 	}
 	
+	//Return true if score displayed should be changed
 	public boolean changeScore() {
 		if (changeScore) {
 			changeScore = false;
