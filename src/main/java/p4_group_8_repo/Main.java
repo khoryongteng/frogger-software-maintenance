@@ -35,24 +35,24 @@ public class Main extends Application {
 	    
 		background.add(froggerback);
 		
-		background.add(new Log("file:src/main/resources/log3.png", 150, 0, 166, 0.75));
-		background.add(new Log("file:src/main/resources/log3.png", 150, 220, 166, 0.75));
-		background.add(new Log("file:src/main/resources/log3.png", 150, 440, 166, 0.75));
+		background.add(new ShortLog(0, 166, 0.75));
+		background.add(new ShortLog(220, 166, 0.75));
+		background.add(new ShortLog(440, 166, 0.75));
 		//background.add(new Log("file:src/p4_group_8_repo/log3.png", 150, 0, 166, 0.75));
-		background.add(new Log("file:src/main/resources/logs.png", 300, 0, 276, -2));
-		background.add(new Log("file:src/main/resources/logs.png", 300, 400, 276, -2));
+		background.add(new LongLog(0, 276, -2));
+		background.add(new LongLog(400, 276, -2));
 		//background.add(new Log("file:src/p4_group_8_repo/logs.png", 300, 800, 276, -2));
-		background.add(new Log("file:src/main/resources/log3.png", 150, 50, 329, 0.75));
-		background.add(new Log("file:src/main/resources/log3.png", 150, 270, 329, 0.75));
-		background.add(new Log("file:src/main/resources/log3.png", 150, 490, 329, 0.75));
+		background.add(new ShortLog(50, 329, 0.75));
+		background.add(new ShortLog(270, 329, 0.75));
+		background.add(new ShortLog(490, 329, 0.75));
 		//background.add(new Log("file:src/p4_group_8_repo/log3.png", 150, 570, 329, 0.75));
 		
-		background.add(new Turtle(500, 376, -1, 130, 130));
-		background.add(new Turtle(300, 376, -1, 130, 130));
-		background.add(new WetTurtle(700, 376, -1, 130, 130));
-		background.add(new WetTurtle(600, 217, -1, 130, 130));
-		background.add(new WetTurtle(400, 217, -1, 130, 130));
-		background.add(new WetTurtle(200, 217, -1, 130, 130));
+		background.add(new Turtle(500, 376, -1));
+		background.add(new Turtle(300, 376, -1));
+		background.add(new WetTurtle(700, 376, -1));
+		background.add(new WetTurtle(600, 217, -1));
+		background.add(new WetTurtle(400, 217, -1));
+		background.add(new WetTurtle(200, 217, -1));
 		//background.add(new Log("file:src/p4_group_8_repo/log2.png", 200, 100, 1));
 		//background.add(new Log("file:src/p4_group_8_repo/log2.png", 0, 100, 1));
 		//background.add(new Log("file:src/p4_group_8_repo/log2.png", 100, 120, -1));

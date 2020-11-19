@@ -200,8 +200,20 @@ public class Animal extends Actor {
 		if (getIntersectingObjects(Obstacle.class).size() >= 1) {
 			carDeath = true;
 		}
-		if (getIntersectingObjects(Log.class).size() >= 1 && !noMove) {
-			if(getIntersectingObjects(Log.class).get(0).getLeft())
+		if (getIntersectingObjects(LongLog.class).size() >= 1 && !noMove) {
+			if(getIntersectingObjects(LongLog.class).get(0).getLeft())
+				move(-2,0);
+			else
+				move (.75,0);
+		}
+		else if (getIntersectingObjects(ShortLog.class).size() >= 1 && !noMove) {
+			if(getIntersectingObjects(ShortLog.class).get(0).getLeft())
+				move(-2,0);
+			else
+				move (.75,0);
+		}
+		else if (getIntersectingObjects(MediumLog.class).size() >= 1 && !noMove) {
+			if(getIntersectingObjects(MediumLog.class).get(0).getLeft())
 				move(-2,0);
 			else
 				move (.75,0);
