@@ -132,12 +132,12 @@ public class Main extends Application {
     
     public void setNumber(int n) {
     	int shift = 0;
-    	while (n > 0) {
-    		  int d = n / 10;
-    		  int k = n - d * 10;
-    		  n = d;
-    		  background.add(new Digit(k, 30, 360 - shift, 25));
-    		  shift+=30;
-    		}
+    	for(int i=0;i<3;i++) {
+    		int d = n / 10;
+    		int k = n - d * 10;
+    		n = d;
+    		background.add(new Digit(k, 30, 360 - shift, 25));
+    		shift+=30;
+    	}
     }
 }
