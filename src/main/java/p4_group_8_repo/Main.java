@@ -17,6 +17,7 @@ import javafx.util.Duration;
 public class Main extends Application {
 	AnimationTimer timer;
 	MyStage background;
+    MusicPlayer musicPlayer = new MusicPlayer();
 	Animal animal;
 	public static void main(String[] args) {
 		launch(args);
@@ -108,7 +109,7 @@ public class Main extends Application {
             	}
             	if (animal.getStop()) {
             		System.out.print("STOPP:");
-            		background.stopMusic();
+            		musicPlayer.stop();
             		stop();
             		background.stop();
             		Alert alert = new Alert(AlertType.INFORMATION);
@@ -121,7 +122,7 @@ public class Main extends Application {
         };
     }
 	public void start() {
-		background.playMusic();
+		musicPlayer.play();
     	createTimer();
         timer.start();
     }
