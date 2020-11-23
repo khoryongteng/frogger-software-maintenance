@@ -175,8 +175,8 @@ public class Animal extends Actor {
 	public void act(long now) {
 
 		KeepWithinWindow();
-		ObjectInteraction();
-		DeathProcess(now);
+		objectInteraction();
+		deathProcess(now);
 		
 	}
 	
@@ -195,53 +195,50 @@ public class Animal extends Actor {
 		
 	}
 	
-	private void ObjectInteraction() {
+	private void objectInteraction() {
 		
 		if (getIntersectingObjects(Obstacle.class).size() >= 1) {
 			carDeath = true;
 		}
-		if (getIntersectingObjects(LongLog.class).size() >= 1 && !noMove) {
+		if (getIntersectingObjects(WetTurtle.class).size() >= 1) {
 			
-			move(getIntersectingObjects(LongLog.class).get(0).getSpeed(), 0);
-			
-		}
-		else if (getIntersectingObjects(ShortLog.class).size() >= 1 && !noMove) {
-			
-			move(getIntersectingObjects(ShortLog.class).get(0).getSpeed(), 0);
-		}
-		else if (getIntersectingObjects(MediumLog.class).size() >= 1 && !noMove) {
-			
-			move(getIntersectingObjects(MediumLog.class).get(0).getSpeed(), 0);
-			
-		}
-		else if (getIntersectingObjects(Turtle.class).size() >= 1 && !noMove) {
-
-			move(getIntersectingObjects(Turtle.class).get(0).getSpeed(), 0);
-			
-		}
-		else if (getIntersectingObjects(WetTurtle.class).size() >= 1) {
 			if (getIntersectingObjects(WetTurtle.class).get(0).isSunk()) {
+				
 				waterDeath = true;
-			} else {
+				
+			} 
+			else {
+				
 				move(getIntersectingObjects(WetTurtle.class).get(0).getSpeed(), 0);
+				
 			}
 		}
+		else if (getIntersectingObjects(Rideable.class).size() >= 1 && !noMove ) {
+			
+			move(getIntersectingObjects(Rideable.class).get(0).getSpeed(), 0);
+			
+		}
 		else if (getIntersectingObjects(End.class).size() >= 1) {
+			
 			inter = (ArrayList<End>) getIntersectingObjects(End.class);
+			
 			if (getIntersectingObjects(End.class).get(0).isActivated()) {
 				end--;
 				points-=50;
 			}
+			
 			getIntersectingObjects(End.class).get(0).setEnd();
 			respawn(true);
 		}
 		else if (getY()<413){
+			
 			waterDeath = true;
+			
 		}
 		
 	}
 	
-	private void DeathProcess(long now) {
+	private void deathProcess(long now) {
 		
 		if (carDeath) {
 			noMove = true;
