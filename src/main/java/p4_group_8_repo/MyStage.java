@@ -7,12 +7,13 @@ import javafx.util.Duration;
 
 public class MyStage extends World {
 	public Animal animal;
+	private Digit[] scoreDigit =  new Digit[4];
 	
 	public MyStage() {
 		
-		/*
 		BackgroundImage froggerback = new BackgroundImage("file:src/main/resources/iKogsKW.png");
 		add(froggerback);
+		
 		add(new ShortLog(0, 166, 0.75));
 		add(new ShortLog(220, 166, 0.75));
 		add(new ShortLog(440, 166, 0.75));
@@ -34,10 +35,21 @@ public class MyStage extends World {
 		add(new End(141 + 141-13,96));
 		add(new End(141 + 141-13+141-13+1,96));
 		add(new End(141 + 141-13+141-13+141-13+3,96));
-		*/
 		
-		BackgroundImage froggerback = new BackgroundImage("file:src/main/resources/iKogsKW.png");
-		add(froggerback);
+		
+		
+		
+		scoreDigit[0] = new Digit(0, 30, 360, 25);
+		scoreDigit[1] = new Digit(0, 30, 330, 25);
+		scoreDigit[2] = new Digit(0, 30, 300, 25);
+		scoreDigit[3] = new Digit(0, 30, 270, 25);
+				
+		add(scoreDigit[0]);
+		add(scoreDigit[1]);
+		add(scoreDigit[2]);
+		add(scoreDigit[3]);
+		
+		/*
 		add(new ShortLog(0, 166, 0.75));
 		add(new ShortLog(220, 166, 0.75));
 		add(new ShortLog(440, 166, 0.75));
@@ -69,7 +81,21 @@ public class MyStage extends World {
 		add(new LongTruck(0, 540, 1));
 		add(new LongTruck(500, 540, 1));
 		add(new Car(500, 490, -5));
-		//add(new Digit(0, 30, 360, 25));
+		*/
+		
+		
+	}
+	
+	public void setScore(int n) {
+		
+    	for(int i=0;i<4;i++) {
+    		
+    		int d = n / 10;
+    		int k = n - d * 10;
+    		scoreDigit[i].setDigit(k);
+    		n = d;
+    		
+    	}
 		
 	}
 	

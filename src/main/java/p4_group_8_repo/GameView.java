@@ -26,11 +26,11 @@ public class GameView {
 	public void setScene(Scene scene) {
 		
 		primaryStage.setScene(scene);
-		keyListener(scene);
+		setKeyListener(scene);
 		
 	}
 	
-	private void keyListener(Scene scene) {
+	public void setKeyListener(Scene scene) {
 		
 		scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
 			
@@ -41,6 +41,7 @@ public class GameView {
 			}
 			
 		});
+		
 		scene.setOnKeyReleased(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
 				

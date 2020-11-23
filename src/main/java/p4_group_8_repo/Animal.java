@@ -67,9 +67,11 @@ public class Animal extends Actor {
 	                else {
 	                	
 	                	if (getY() < w) {
+	                		
 							changeScore = true;
 							w = getY();
 							points+=10;
+							
 						}
 	                	
 	                }
@@ -178,7 +180,7 @@ public class Animal extends Actor {
 			
 			if (getIntersectingObjects(WetTurtle.class).get(0).isSunk()) {
 				
-				waterDeath = true;
+				//waterDeath = true;
 				
 			} 
 			else {
@@ -206,7 +208,7 @@ public class Animal extends Actor {
 		}
 		else if (getY()<413){
 			
-			waterDeath = true;
+			//waterDeath = true;
 			
 		}
 		
@@ -301,6 +303,7 @@ public class Animal extends Actor {
 	
 	//Return true if score displayed should be changed
 	public boolean changeScore() {
+		
 		if (changeScore) {
 			changeScore = false;
 			return true;

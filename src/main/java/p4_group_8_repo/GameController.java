@@ -11,6 +11,8 @@ public class GameController {
 	private SceneController sceneController;
 	private MyStage[] level = new MyStage[3];
 	private int currentLevel;
+	private int totalScore = 0;
+	private int savedScore = 0;
 	
 	public GameController(GameView gameView) {
 		
@@ -23,20 +25,21 @@ public class GameController {
 		Scene scene  = new Scene(level[0],600,800);
 	    gameView.setScene(scene);
 		
-	    sceneController = new SceneController(scene, level.length);
+	    sceneController = new SceneController(scene, level.length, gameView);
 	    sceneController.addScene(0, level[0]);
 	    sceneController.addScene(1, level[1]);
 	    sceneController.addScene(2, level[2]);
 	    sceneController.activate(0);
 	    
 	    gameView.start();
+		start();
 		
 	}
 	
 	private void nextLevel() {
 
-		sceneController.stopScene();
 		sceneController.changeScene(++currentLevel);
+		level[currentLevel].setScore(totalScore);
 		
 	}
 	
@@ -47,14 +50,24 @@ public class GameController {
 	}
 	
 	public void createTimer() {
+		
         timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
+            	
+            	if (level[currentLevel].animal.changeScore()) {
+            		
+            		totalScore = savedScore + level[currentLevel].animal.getPoints();
+            		level[currentLevel].setScore(totalScore);
+            		
+            	}
+            	
             	
             	if (currentLevel < (level.length - 1)) {
             		
             		if(level[currentLevel].animal.getStop()) {
             			
+            			savedScore = totalScore;
             			nextLevel();
             			
             		}
@@ -64,31 +77,18 @@ public class GameController {
             		
             		if(level[currentLevel].animal.getStop()) {
             			
+            			savedScore = totalScore;
             			sceneController.stopScene();
             			stop();
                 		
             		}
             		
             	}
-            	/*
-            	if (animal.changeScore()) {
-            		setNumber(animal.getPoints());
-            	}
-            	if (animal.getStop()) {
-            		System.out.print("STOPP:");
-            		musicPlayer.stop();
-            		stop();
-            		background.stop();
-            		Alert alert = new Alert(AlertType.INFORMATION);
-            		alert.setTitle("You Have Won The Game!");
-            		alert.setHeaderText("Your High Score: "+animal.getPoints()+"!");
-            		alert.setContentText("Highest Possible Score: 800");
-            		alert.show();
-            	}
-            	*/
+            	
             }
         };
     }
+	
 	public void start() {
 		
     	createTimer();
