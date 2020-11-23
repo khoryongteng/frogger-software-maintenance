@@ -16,94 +16,69 @@ import javafx.util.Duration;
 
 public class Main extends Application {
 	AnimationTimer timer;
-	MyStage background;
+	MyStage[] level = new MyStage[3];
     MusicPlayer musicPlayer = new MusicPlayer();
 	Animal animal;
+	SceneController sceneController;
+	int currentLevel = 0;
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-	    background = new MyStage();
-	    Scene scene  = new Scene(background,600,800);
-	    
-		//Obstacle obstacle = new Obstacle("file:src/p4_group_8_repo/truck1Right.png", 25, 25, 3);
-		//Obstacle obstacle1 = new Obstacle("file:src/p4_group_8_repo/truck2Right.png", 100, 100,2 );
-		//Obstacle obstacle2 = new Obstacle("file:src/p4_group_8_repo/truck1Right.png",0,  150, 1);
-
-		BackgroundImage froggerback = new BackgroundImage("file:src/main/resources/iKogsKW.png");
-	    
-		background.add(froggerback);
 		
-		background.add(new ShortLog(0, 166, 0.75));
-		background.add(new ShortLog(220, 166, 0.75));
-		background.add(new ShortLog(440, 166, 0.75));
-		//background.add(new Log("file:src/p4_group_8_repo/log3.png", 150, 0, 166, 0.75));
-		background.add(new LongLog(0, 276, -2));
-		background.add(new LongLog(400, 276, -2));
-		//background.add(new Log("file:src/p4_group_8_repo/logs.png", 300, 800, 276, -2));
-		background.add(new ShortLog(50, 329, 0.75));
-		background.add(new ShortLog(270, 329, 0.75));
-		background.add(new ShortLog(490, 329, 0.75));
-		//background.add(new Log("file:src/p4_group_8_repo/log3.png", 150, 570, 329, 0.75));
+		level[0] = new MyStage();
+		level[1] = new MyStage();
+		level[2] = new MyStage();
 		
-		background.add(new Turtle(500, 376, -1));
-		background.add(new Turtle(300, 376, -1));
-		background.add(new WetTurtle(700, 376, -1));
-		background.add(new WetTurtle(600, 217, -1));
-		background.add(new WetTurtle(400, 217, -1));
-		background.add(new WetTurtle(200, 217, -1));
-		//background.add(new Log("file:src/p4_group_8_repo/log2.png", 200, 100, 1));
-		//background.add(new Log("file:src/p4_group_8_repo/log2.png", 0, 100, 1));
-		//background.add(new Log("file:src/p4_group_8_repo/log2.png", 100, 120, -1));
-		//background.add(new Log("file:src/p4_group_8_repo/log2.png", 200, 120, -1));
-		//background.add(new Log("file:src/p4_group_8_repo/log2.png", 100, 140, 1));
-		//background.add(new Log("file:src/p4_group_8_repo/log2.png", 200, 140, 1));
-		//background.add(new Log("file:src/p4_group_8_repo/log2.png", 100, 160, -1));
-		//background.add(new Log("file:src/p4_group_8_repo/log2.png", 300, 160, -1));
-		//background.add(new Log("file:src/p4_group_8_repo/log2.png", 100, 180, 1));
-		//background.add(new Log("file:src/p4_group_8_repo/log2.png", 200, 180, 1));
-		//background.add(new Log("file:src/p4_group_8_repo/log2.png", 100, 200, -1));
-		//background.add(new Log("file:src/p4_group_8_repo/log2.png", 200, 200, -1));
-		//background.add(new Log("file:src/p4_group_8_repo/log2.png", 100, 220, 1));
-		//background.add(new Log("file:src/p4_group_8_repo/log2.png", 200, 220, 1));
-		//background.add(new Log("file:src/p4_group_8_repo/log2.png", 400, 220, 1));
-		//End end2 = new End();
-		//End end3 = new End();
-		//End end4 = new End();
-		//End end5 = new End();
-		background.add(new End(13,96));
-		background.add(new End(141,96));
-		background.add(new End(141 + 141-13,96));
-		background.add(new End(141 + 141-13+141-13+1,96));
-		background.add(new End(141 + 141-13+141-13+141-13+3,96));
-		animal = new Animal("file:src/main/resources/froggerUp.png");
-		background.add(animal);
-		background.add(new ShortTruck(0, 649, 1));
-		background.add(new ShortTruck(300, 649, 1));
-		background.add(new ShortTruck(600, 649, 1));
-		//background.add(new Obstacle("file:src/p4_group_8_repo/truck1"+"Right.png", 720, 649, 1, 120, 120));
-		background.add(new Car(100, 597, -1));
-		background.add(new Car(250, 597, -1));
-		background.add(new Car(400, 597, -1));
-		background.add(new Car(550, 597, -1));
-		background.add(new LongTruck(0, 540, 1));
-		background.add(new LongTruck(500, 540, 1));
-		background.add(new Car(500, 490, -5));
-		background.add(new Digit(0, 30, 360, 25));
-		//background.add(obstacle);
-		//background.add(obstacle1);
-		//background.add(obstacle2);
-		background.start();
+	    Scene scene  = new Scene(level[0],600,800);
+	    
+	    sceneController = new SceneController(scene, level.length);
+	    sceneController.addScene(0, level[0]);
+	    sceneController.addScene(1, level[1]);
+	    sceneController.addScene(2, level[2]);
+	    
+	    sceneController.activate(0);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 		start();  
+		
 	}
+	
+	private void nextLevel() {
+
+		sceneController.stopScene();
+		sceneController.changeScene(++currentLevel);
+		
+	}
+	
 	public void createTimer() {
         timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
+            	
+            	if (currentLevel < (level.length - 1)) {
+            		
+            		if(level[currentLevel].animal.getStop()) {
+            			
+            			nextLevel();
+            			
+            		}
+            		
+            	}
+            	else {
+            		
+            		if(level[currentLevel].animal.getStop()) {
+            			
+            			sceneController.stopScene();
+            			stop();
+                		
+            		}
+            		
+            	}
+            	/*
             	if (animal.changeScore()) {
             		setNumber(animal.getPoints());
             	}
@@ -118,6 +93,7 @@ public class Main extends Application {
             		alert.setContentText("Highest Possible Score: 800");
             		alert.show();
             	}
+            	*/
             }
         };
     }
@@ -131,6 +107,7 @@ public class Main extends Application {
         timer.stop();
     }
     
+    /*
     public void setNumber(int n) {
     	int shift = 0;
     	for(int i=0;i<3;i++) {
@@ -141,4 +118,5 @@ public class Main extends Application {
     		shift+=30;
     	}
     }
+    */
 }
