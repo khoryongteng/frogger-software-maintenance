@@ -201,31 +201,29 @@ public class Animal extends Actor {
 			carDeath = true;
 		}
 		if (getIntersectingObjects(LongLog.class).size() >= 1 && !noMove) {
-			if(getIntersectingObjects(LongLog.class).get(0).getLeft())
-				move(-2,0);
-			else
-				move (.75,0);
+			
+			move(getIntersectingObjects(LongLog.class).get(0).getSpeed(), 0);
+			
 		}
 		else if (getIntersectingObjects(ShortLog.class).size() >= 1 && !noMove) {
-			if(getIntersectingObjects(ShortLog.class).get(0).getLeft())
-				move(-2,0);
-			else
-				move (.75,0);
+			
+			move(getIntersectingObjects(ShortLog.class).get(0).getSpeed(), 0);
 		}
 		else if (getIntersectingObjects(MediumLog.class).size() >= 1 && !noMove) {
-			if(getIntersectingObjects(MediumLog.class).get(0).getLeft())
-				move(-2,0);
-			else
-				move (.75,0);
+			
+			move(getIntersectingObjects(MediumLog.class).get(0).getSpeed(), 0);
+			
 		}
 		else if (getIntersectingObjects(Turtle.class).size() >= 1 && !noMove) {
-			move(-1,0);
+
+			move(getIntersectingObjects(Turtle.class).get(0).getSpeed(), 0);
+			
 		}
 		else if (getIntersectingObjects(WetTurtle.class).size() >= 1) {
 			if (getIntersectingObjects(WetTurtle.class).get(0).isSunk()) {
 				waterDeath = true;
 			} else {
-				move(-1,0);
+				move(getIntersectingObjects(WetTurtle.class).get(0).getSpeed(), 0);
 			}
 		}
 		else if (getIntersectingObjects(End.class).size() >= 1) {

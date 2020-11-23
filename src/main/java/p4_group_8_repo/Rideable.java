@@ -28,5 +28,11 @@ public abstract class Rideable extends Actor {
 				setX(700);
 			
 		}
+		
+		public double getSpeed() {
+			
+			return speed;
+			
+		}
 	
 }

@@ -15,9 +15,4 @@ public class LongLog extends Rideable {
 		
 	}
 	
-	//Check if log is moving left
-	public boolean getLeft() {
-		return speed < 0;
-	}
-	
 }
