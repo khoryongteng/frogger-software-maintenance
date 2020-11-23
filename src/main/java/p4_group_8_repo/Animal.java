@@ -3,7 +3,6 @@ package p4_group_8_repo;
 import java.util.ArrayList;
 
 import javafx.event.EventHandler;
-
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -44,36 +43,11 @@ public class Animal extends Actor {
 		imgA2 = new Image("file:src/main/resources/froggerLeftJump.png", imgSize, imgSize, true, true);
 		imgS2 = new Image("file:src/main/resources/froggerDownJump.png", imgSize, imgSize, true, true);
 		imgD2 = new Image("file:src/main/resources/froggerRightJump.png", imgSize, imgSize, true, true);
-		keyListener();
-		
-	}
-	
-	//Key press detection
-	private void keyListener() {
-		
-		setOnKeyPressed(new EventHandler<KeyEvent>() {
-			
-			public void handle(KeyEvent event){
-				
-				playerControls(event);
-				
-			}
-			
-		});
-		setOnKeyReleased(new EventHandler<KeyEvent>() {
-			public void handle(KeyEvent event) {
-				
-				playerControls(event);
-				
-			}
-			
-		});
-		
 		
 	}
 	
 	//Player Controls
-	private void playerControls(KeyEvent event) {
+	public void playerControls(KeyEvent event) {
 		
 		if (noMove) {
 			

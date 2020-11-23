@@ -1,6 +1,8 @@
 package p4_group_8_repo;
 
 import java.io.File;
+
+import javafx.scene.input.KeyEvent;
 import javafx.util.Duration;
 
 public class MyStage extends World {
@@ -68,6 +70,12 @@ public class MyStage extends World {
 		add(new LongTruck(500, 540, 1));
 		add(new Car(500, 490, -5));
 		//add(new Digit(0, 30, 360, 25));
+		
+	}
+	
+	public void controlsHandler(KeyEvent event){
+		
+		animal.playerControls(event);
 		
 	}
 	
