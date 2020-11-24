@@ -31,6 +31,7 @@ public class SceneController extends World {
         scene.setRoot(screenMap.get(levelnum));
         gameView.setKeyListener(scene);
         startScene();
+        
     }
 	
     public void startScene() {
@@ -49,8 +50,7 @@ public class SceneController extends World {
     	
     	stopScene();
     	activate(levelnum);
-    	
-    	
+
     }
     
 	@Override

@@ -26,7 +26,6 @@ public class GameView {
 	public void setScene(Scene scene) {
 		
 		primaryStage.setScene(scene);
-		setKeyListener(scene);
 		
 	}
 	
