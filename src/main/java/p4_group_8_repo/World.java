@@ -107,4 +107,7 @@ public abstract class World extends Pane {
     }
 
     public abstract void act(long now);
+    
+    public abstract void controlsHandler(KeyEvent event);
+    
 }

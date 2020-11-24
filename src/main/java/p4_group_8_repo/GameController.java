@@ -9,7 +9,7 @@ public class GameController {
 	AnimationTimer timer;
 	private GameView gameView;
 	private SceneController sceneController;
-	private MyStage[] level = new MyStage[3];
+	private World[] levels = new World[2];
 	private int currentLevel;
 	private int totalScore = 0;
 	private int savedScore = 0;
@@ -18,17 +18,15 @@ public class GameController {
 		
 		this.gameView = gameView;
 		
-		level[0] = new MyStage();
-		level[1] = new MyStage();
-		level[2] = new MyStage();
+		levels[0] = new Level1();
+		levels[1] = new Level2();
 		
-		Scene scene  = new Scene(level[0],600,800);
+		Scene scene  = new Scene(levels[0],600,800);
 	    gameView.setScene(scene);
 		
-	    sceneController = new SceneController(scene, level.length, gameView);
-	    sceneController.addScene(0, level[0]);
-	    sceneController.addScene(1, level[1]);
-	    sceneController.addScene(2, level[2]);
+	    sceneController = new SceneController(scene, levels.length, gameView);
+	    sceneController.addScene(0, levels[0]);
+	    sceneController.addScene(1, levels[1]);
 	    sceneController.activate(0);
 	    
 	    gameView.start();
@@ -39,13 +37,13 @@ public class GameController {
 	private void nextLevel() {
 
 		sceneController.changeScene(++currentLevel);
-		level[currentLevel].setScore(totalScore);
+		((Level)levels[currentLevel]).setScore(totalScore);
 		
 	}
 	
 	public void keyHandler(KeyEvent event) {
 		
-		level[currentLevel].controlsHandler(event);
+		((Level)levels[currentLevel]).controlsHandler(event);
 		
 	}
 	
@@ -55,17 +53,17 @@ public class GameController {
             @Override
             public void handle(long now) {
             	
-            	if (level[currentLevel].animal.changeScore()) {
+            	if (((Level)levels[currentLevel]).animal.changeScore()) {
             		
-            		totalScore = savedScore + level[currentLevel].animal.getPoints();
-            		level[currentLevel].setScore(totalScore);
+            		totalScore = savedScore + ((Level)levels[currentLevel]).animal.getPoints();
+            		((Level)levels[currentLevel]).setScore(totalScore);
             		
             	}
             	
             	
-            	if (currentLevel < (level.length - 1)) {
+            	if (currentLevel < (levels.length - 1)) {
             		
-            		if(level[currentLevel].animal.getStop()) {
+            		if(((Level)levels[currentLevel]).animal.getStop()) {
             			
             			savedScore = totalScore;
             			nextLevel();
@@ -75,7 +73,7 @@ public class GameController {
             	}
             	else {
             		
-            		if(level[currentLevel].animal.getStop()) {
+            		if(((Level)levels[currentLevel]).animal.getStop()) {
             			
             			savedScore = totalScore;
             			sceneController.stopScene();
@@ -99,16 +97,4 @@ public class GameController {
         timer.stop();
     }
     
-    /*
-    public void setNumber(int n) {
-    	int shift = 0;
-    	for(int i=0;i<3;i++) {
-    		int d = n / 10;
-    		int k = n - d * 10;
-    		n = d;
-    		background.add(new Digit(k, 30, 360 - shift, 25));
-    		shift+=30;
-    	}
-    }
-    */
 }

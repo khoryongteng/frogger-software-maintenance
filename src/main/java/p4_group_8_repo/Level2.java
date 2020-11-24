@@ -1,19 +1,10 @@
 package p4_group_8_repo;
 
-import java.io.File;
+public class Level2 extends Level {
 
-import javafx.scene.input.KeyEvent;
-import javafx.util.Duration;
-
-public class MyStage extends World {
-	public Animal animal;
-	private Digit[] scoreDigit =  new Digit[4];
-	
-	public MyStage() {
+	public Level2() {
 		
-		BackgroundImage froggerback = new BackgroundImage("file:src/main/resources/iKogsKW.png");
-		add(froggerback);
-		
+		super();
 		add(new ShortLog(0, 166, 0.75));
 		add(new ShortLog(220, 166, 0.75));
 		add(new ShortLog(440, 166, 0.75));
@@ -28,27 +19,13 @@ public class MyStage extends World {
 		add(new WetTurtle(600, 217, -1));
 		add(new WetTurtle(400, 217, -1));
 		add(new WetTurtle(200, 217, -1));
-		animal = new Animal("file:src/main/resources/froggerUp.png");
-		add(animal);
 		add(new End(13,96));
 		add(new End(141,96));
 		add(new End(141 + 141-13,96));
 		add(new End(141 + 141-13+141-13+1,96));
 		add(new End(141 + 141-13+141-13+141-13+3,96));
 		
-		
-		
-		
-		scoreDigit[0] = new Digit(0, 30, 360, 25);
-		scoreDigit[1] = new Digit(0, 30, 330, 25);
-		scoreDigit[2] = new Digit(0, 30, 300, 25);
-		scoreDigit[3] = new Digit(0, 30, 270, 25);
-				
-		add(scoreDigit[0]);
-		add(scoreDigit[1]);
-		add(scoreDigit[2]);
-		add(scoreDigit[3]);
-		
+
 		/*
 		add(new ShortLog(0, 166, 0.75));
 		add(new ShortLog(220, 166, 0.75));
@@ -83,31 +60,6 @@ public class MyStage extends World {
 		add(new Car(500, 490, -5));
 		*/
 		
-		
 	}
-	
-	public void setScore(int n) {
-		
-    	for(int i=0;i<4;i++) {
-    		
-    		int d = n / 10;
-    		int k = n - d * 10;
-    		scoreDigit[i].setDigit(k);
-    		n = d;
-    		
-    	}
-		
-	}
-	
-	public void controlsHandler(KeyEvent event){
-		
-		animal.playerControls(event);
-		
-	}
-	
-	@Override
-	public void act(long now) {
-		
-	}
-	
+
 }

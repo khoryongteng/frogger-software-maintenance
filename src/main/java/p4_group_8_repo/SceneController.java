@@ -2,11 +2,9 @@ package p4_group_8_repo;
 
 import java.util.HashMap;
 
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyEvent;
 
-public class SceneController extends World {
+public class SceneController {
 
 	private HashMap<Integer, World> screenMap;
     private Scene scene;
@@ -52,11 +50,5 @@ public class SceneController extends World {
     	activate(levelnum);
 
     }
-    
-	@Override
-	public void act(long now) {
-
-		
-	}	
 	
 }
