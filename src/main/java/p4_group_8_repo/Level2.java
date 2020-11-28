@@ -24,6 +24,8 @@ public class Level2 extends Level {
 		add(new End(141 + 141-13,96));
 		add(new End(141 + 141-13+141-13+1,96));
 		add(new End(141 + 141-13+141-13+141-13+3,96));
+		animal = new Animal("file:src/main/resources/froggerUp.png");
+		add(animal);
 		
 
 		/*

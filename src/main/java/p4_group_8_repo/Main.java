@@ -23,10 +23,12 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
-		GameView gameView = new GameView(primaryStage);
-		GameController gameController = new GameController(gameView);
+		StartSceneController startSceneController = new StartSceneController();
+		EndSceneController endSceneController = new EndSceneController();
+		GameController gameController = new GameController(primaryStage, startSceneController, endSceneController);
 		
-		gameView.setController(gameController);
+		startSceneController.setGameController(gameController);
+		endSceneController.setGameController(gameController);
 	}
 	
 	

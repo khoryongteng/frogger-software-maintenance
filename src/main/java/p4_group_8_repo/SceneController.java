@@ -3,51 +3,61 @@ package p4_group_8_repo;
 import java.util.HashMap;
 
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 
 public class SceneController {
 
-	private HashMap<Integer, World> screenMap;
+	private HashMap<Integer, Pane> screenMap;
     private Scene scene;
-    private GameView gameView;
+    private GameController gameController;
 
-    public SceneController(Scene scene, int numLevels, GameView gameView) {
-    	screenMap = new HashMap<>(numLevels);
+    public SceneController(GameController gameController, Scene scene) {
+    	screenMap = new HashMap<>();
         this.scene = scene;
-        this.gameView = gameView;
+        this.gameController = gameController;
     }
 
-    protected void addScene(Integer levelnum, World world){
-         screenMap.put(levelnum, world);
+    protected void addScene(Integer sceneNum, Pane pane){
+         screenMap.put(sceneNum, pane);
     }
 
-    protected void removeScene(Integer levelnum){
-        screenMap.remove(levelnum);
+    protected void removeScene(Integer sceneNum){
+        screenMap.remove(sceneNum);
     }
 
-    protected void activate(Integer levelnum){
+    protected void activate(Integer sceneNum){
     	
-        scene.setRoot(screenMap.get(levelnum));
-        gameView.setKeyListener(scene);
-        startScene();
+        scene.setRoot(screenMap.get(sceneNum));
+        
+        if (scene.getRoot() instanceof World) {
+        	
+            startLevel();
+            
+        }
         
     }
 	
-    public void startScene() {
+    public void startLevel() {
     	
     	((World)scene.getRoot()).start();
     	
     }
     
-    public void stopScene() {
+    public void stopLevel() {
     	
     	((World)scene.getRoot()).stop();
     	
     }
     
-    public void changeScene(Integer levelnum) {
+    public void changeScene(Integer sceneNum) {
     	
-    	stopScene();
-    	activate(levelnum);
+    	if (scene.getRoot() instanceof World) {
+        	
+    		stopLevel();
+            
+        }
+    	
+    	activate(sceneNum);
 
     }
 	

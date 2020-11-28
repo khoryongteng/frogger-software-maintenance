@@ -23,9 +23,6 @@ public abstract class Level extends World {
 		add(scoreDigit[2]);
 		add(scoreDigit[3]);
 		
-		animal = new Animal("file:src/main/resources/froggerUp.png");
-		add(animal);
-		
 	}
 	
 	public void setScore(int n) {

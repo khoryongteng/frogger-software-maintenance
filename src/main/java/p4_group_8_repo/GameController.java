@@ -1,69 +1,93 @@
 package p4_group_8_repo;
 
+import java.io.IOException;
+
 import javafx.animation.AnimationTimer;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 public class GameController {
 
-	AnimationTimer timer;
-	private GameView gameView;
+	private AnimationTimer timer;
 	private SceneController sceneController;
-	private World[] levels = new World[2];
-	private int currentLevel;
+	private Scene scene;
+	private Level[] levels = new Level[2];
+	private int currentScene;
 	private int totalScore = 0;
 	private int savedScore = 0;
+	private MusicPlayer musicPlayer = new MusicPlayer();
+	private StartSceneController startSceneController;
+	private EndSceneController endSceneController;
 	
-	public GameController(GameView gameView) {
+	public GameController(Stage primaryStage, StartSceneController startSceneController, EndSceneController endSceneController) throws IOException {
 		
-		this.gameView = gameView;
+		this.startSceneController = startSceneController;
+		FXMLLoader startSceneLoader = new FXMLLoader(getClass().getResource("/views/StartScene.fxml"));
+		startSceneLoader.setController(startSceneController);
+		Pane startScene = startSceneLoader.load();
 		
-		levels[0] = new Level1();
-		levels[1] = new Level2();
+		this.endSceneController = endSceneController;
+		FXMLLoader endSceneLoader = new FXMLLoader(getClass().getResource("/views/EndScene.fxml"));
+		endSceneLoader.setController(endSceneController);
+		Pane endScene = endSceneLoader.load();
 		
-		Scene scene  = new Scene(levels[0],600,800);
-	    gameView.setScene(scene);
+		scene  = new Scene(startScene, 600, 800);
+		primaryStage.setScene(scene);
 		
-	    sceneController = new SceneController(scene, levels.length, gameView);
-	    sceneController.addScene(0, levels[0]);
-	    sceneController.addScene(1, levels[1]);
-	    sceneController.activate(0);
+	    sceneController = new SceneController(this, scene);
+	    sceneController.addScene(0, startScene);
+	    currentScene = 0;
 	    
-	    gameView.start();
-		start();
+	    levels[0] = new Level1();
+		levels[1] = new Level2();
+	    sceneController.addScene(1, levels[0]);
+	    sceneController.addScene(2, levels[1]);
+	    sceneController.addScene(3, endScene);
+	    
+	    sceneController.activate(currentScene);
+	    
+	    primaryStage.setResizable(false);
+	    primaryStage.show();
+	    musicPlayer.play();
 		
 	}
 	
-	private void nextLevel() {
-
-		sceneController.changeScene(++currentLevel);
-		((Level)levels[currentLevel]).setScore(totalScore);
+	public void nextLevel() {
 		
-	}
-	
-	public void keyHandler(KeyEvent event) {
-		
-		((Level)levels[currentLevel]).controlsHandler(event);
+		sceneController.changeScene(++currentScene);
+		if (scene.getRoot() instanceof Level) {
+			
+			((Level)scene.getRoot()).setScore(savedScore);;
+			
+		}
+		else {
+			
+			stop();
+			
+		}
 		
 	}
 	
 	public void createTimer() {
 		
-        timer = new AnimationTimer() {
+		timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
             	
-            	if (((Level)levels[currentLevel]).animal.changeScore()) {
+            	if (scene.getRoot() instanceof Level) {
             		
-            		totalScore = savedScore + ((Level)levels[currentLevel]).animal.getPoints();
-            		((Level)levels[currentLevel]).setScore(totalScore);
+            		if(((Level)scene.getRoot()).animal.changeScore()) {
+            			
+            			totalScore = savedScore + ((Level)scene.getRoot()).animal.getPoints();
+            			((Level)scene.getRoot()).setScore(totalScore);
+            			
+            		}
             		
-            	}
-            	
-            	
-            	if (currentLevel < (levels.length - 1)) {
-            		
-            		if(((Level)levels[currentLevel]).animal.getStop()) {
+            		if(((Level)scene.getRoot()).animal.getStop()) {
             			
             			savedScore = totalScore;
             			nextLevel();
@@ -73,28 +97,29 @@ public class GameController {
             	}
             	else {
             		
-            		if(((Level)levels[currentLevel]).animal.getStop()) {
-            			
-            			savedScore = totalScore;
-            			sceneController.stopScene();
-            			stop();
-                		
-            		}
+            		stop();
             		
             	}
             	
             }
         };
+		
     }
 	
 	public void start() {
-		
+	
+		currentScene = 1;
+		sceneController.activate(currentScene);
     	createTimer();
         timer.start();
+        
     }
 
     public void stop() {
+    	
+    	endSceneController.setEndScore(savedScore);
         timer.stop();
+        
     }
     
 }
