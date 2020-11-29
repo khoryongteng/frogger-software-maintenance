@@ -27,6 +27,12 @@ public class EndSceneController implements Initializable {
 	@FXML 
 	private TextField username;
 	
+	public EndSceneController(HighScores highScores) {
+		
+		this.highScores = highScores;
+		
+	}
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
@@ -36,16 +42,10 @@ public class EndSceneController implements Initializable {
 		username.setFont(Font.loadFont(fontUrl, 22));
 		
 	}
-	
+
 	public void setGameController(GameController gameController) {
 		
 		this.gameController = gameController;
-		
-	}
-	
-	public void setHighScores(HighScores highScores) {
-		
-		this.highScores = highScores;
 		
 	}
 	

@@ -9,14 +9,13 @@ public class SceneController {
 
 	private HashMap<Integer, Pane> screenMap;
     private Scene scene;
-    private GameController gameController;
 
-    public SceneController(GameController gameController, Scene scene) {
+    public SceneController(Scene scene) {
     	screenMap = new HashMap<>();
         this.scene = scene;
-        this.gameController = gameController;
+        
     }
-
+    
     protected void addScene(Integer sceneNum, Pane pane){
          screenMap.put(sceneNum, pane);
     }

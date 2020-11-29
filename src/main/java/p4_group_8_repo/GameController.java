@@ -13,59 +13,35 @@ import javafx.stage.Stage;
 public class GameController {
 
 	private AnimationTimer timer;
-	private SceneController sceneController;
-	private Scene scene;
-	private Level[] levels = new Level[2];
 	private int currentScene;
 	private int totalScore = 0;
 	private int savedScore = 0;
 	private MusicPlayer musicPlayer = new MusicPlayer();
-	private StartSceneController startSceneController;
+	private SceneController sceneController;
 	private EndSceneController endSceneController;
 	private HSSceneController hsSceneController;
+	private Scene scene;
 	
-	public GameController(Stage primaryStage, StartSceneController startSceneController, EndSceneController endSceneController, HSSceneController hsSceneController) throws IOException {
+	public GameController(Scene scene, SceneController sceneController, EndSceneController endSceneController, HSSceneController hsSceneController) throws IOException {
 		
-		this.startSceneController = startSceneController;
-		FXMLLoader startSceneLoader = new FXMLLoader(getClass().getResource("/views/StartScene.fxml"));
-		startSceneLoader.setController(startSceneController);
-		Pane startScene = startSceneLoader.load();
-		
+		this.scene = scene;
+		this.sceneController = sceneController;
 		this.endSceneController = endSceneController;
-		FXMLLoader endSceneLoader = new FXMLLoader(getClass().getResource("/views/EndScene.fxml"));
-		endSceneLoader.setController(endSceneController);
-		Pane endScene = endSceneLoader.load();
-		
 		this.hsSceneController = hsSceneController;
-		FXMLLoader hsSceneLoader = new FXMLLoader(getClass().getResource("/views/HighScoreScene.fxml"));
-		hsSceneLoader.setController(hsSceneController);
-		Pane hsScene = hsSceneLoader.load();
-		
-		scene  = new Scene(startScene, 600, 800);
-		primaryStage.setScene(scene);
-		
-	    sceneController = new SceneController(this, scene);
-	    sceneController.addScene(0, startScene);
-	    currentScene = 0;
-	    
-	    levels[0] = new Level1();
-		levels[1] = new Level2();
-	    sceneController.addScene(1, levels[0]);
-	    sceneController.addScene(2, levels[1]);
-	    sceneController.addScene(3, endScene);
-	    sceneController.addScene(4, hsScene);
-	    
-	    sceneController.activate(currentScene);
-	    
-	    primaryStage.setResizable(false);
-	    primaryStage.show();
-	    musicPlayer.play();
+		currentScene = 0;
 		
 	}
+	
+	public void playMusic() {
+    	
+    	musicPlayer.play();
+    	
+    }
 	
 	public void nextLevel() {
 		
 		sceneController.changeScene(++currentScene);
+		
 		if (scene.getRoot() instanceof Level) {
 			
 			((Level)scene.getRoot()).setScore(savedScore);;
@@ -85,7 +61,7 @@ public class GameController {
 		
 	}
 	
-	public void createTimer() {
+	private void createTimer() {
 		
 		timer = new AnimationTimer() {
             @Override
@@ -128,7 +104,7 @@ public class GameController {
         
     }
 
-    public void stop() {
+    private void stop() {
     	
     	endSceneController.setEndScore(savedScore);
         timer.stop();
