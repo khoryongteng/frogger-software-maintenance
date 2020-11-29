@@ -10,8 +10,8 @@ public class SceneController {
 	private HashMap<Integer, Pane> screenMap;
     private Scene scene;
 
-    public SceneController(Scene scene) {
-    	screenMap = new HashMap<>();
+    public SceneController(Scene scene, int numScene) {
+    	screenMap = new HashMap<>(numScene);
         this.scene = scene;
         
     }
@@ -28,7 +28,7 @@ public class SceneController {
     	
         scene.setRoot(screenMap.get(sceneNum));
         
-        if (scene.getRoot() instanceof World) {
+        if (scene.getRoot() instanceof Level) {
         	
             startLevel();
             
@@ -38,19 +38,19 @@ public class SceneController {
 	
     public void startLevel() {
     	
-    	((World)scene.getRoot()).start();
+    	((Level)scene.getRoot()).start();
     	
     }
     
     public void stopLevel() {
     	
-    	((World)scene.getRoot()).stop();
+    	((Level)scene.getRoot()).stop();
     	
     }
     
     public void changeScene(Integer sceneNum) {
     	
-    	if (scene.getRoot() instanceof World) {
+    	if (scene.getRoot() instanceof Level) {
         	
     		stopLevel();
             
@@ -58,6 +58,25 @@ public class SceneController {
     	
     	activate(sceneNum);
 
+    }
+    
+    public void resetScenes() {
+    	
+    	for (int i = 0; i < screenMap.size(); i++) {
+    		
+    		if (screenMap.get(i) instanceof Level1) {
+    			
+    			screenMap.replace(i, new Level1());
+    			
+    		}
+    		if (screenMap.get(i) instanceof Level2) {
+    			
+    			screenMap.replace(i, new Level2());
+    			
+    		}
+    		
+    	}
+    	
     }
 	
 }

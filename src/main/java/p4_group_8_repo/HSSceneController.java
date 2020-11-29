@@ -15,6 +15,7 @@ import javafx.scene.control.Label;
 public class HSSceneController implements Initializable{
 	
 	private HighScores highScores;
+	private GameController gameController;
 	private String fontUrl = "file:src/main/resources/fonts/joystix monospace.ttf";
 	
 	@FXML 
@@ -28,9 +29,6 @@ public class HSSceneController implements Initializable{
 	
 	@FXML
 	private Text name1, name2, name3, name4, name5, name6, name7, name8, name9, name10;
-	
-	@FXML 
-	private Button retryButton;
 	
 	private Text[] hsText;
 	private Text[] scoreText;
@@ -72,6 +70,12 @@ public class HSSceneController implements Initializable{
 		}
 		
 	}
+	
+	public void setGameController(GameController gameController) {
+		
+		this.gameController = gameController;
+		
+	}
 
 	public void setScoreText() {
 		
@@ -86,6 +90,13 @@ public class HSSceneController implements Initializable{
 			scoreText[i].setText(parts[1]);
 			
 		}
+		
+	}
+	
+	@FXML
+	public void retry() {
+		
+		gameController.restart();
 		
 	}
 	

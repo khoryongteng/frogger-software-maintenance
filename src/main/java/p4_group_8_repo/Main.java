@@ -53,7 +53,7 @@ public class Main extends Application {
 		//Setup SceneController
 		Scene scene  = new Scene(startScene, 600, 800);
 		
-		SceneController sceneController = new SceneController(scene);
+		SceneController sceneController = new SceneController(scene, 5);
 		
 		sceneController.addScene(0, startScene);
 		sceneController.addScene(1, levels[0]);
@@ -67,6 +67,7 @@ public class Main extends Application {
 		//Link SceneControllers to GameController
 		startSceneController.setGameController(gameController);
 		endSceneController.setGameController(gameController);
+		hsSceneController.setGameController(gameController);
 		
 		sceneController.activate(0);
 		

@@ -111,4 +111,13 @@ public class GameController {
         
     }
     
+    public void restart() {
+    	
+    	savedScore = 0;
+    	totalScore = 0;
+    	sceneController.resetScenes();
+    	start();
+    	
+    }
+    
 }
