@@ -1,5 +1,6 @@
 package p4_group_8_repo;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -13,16 +14,15 @@ import javafx.scene.control.Label;
 public class EndSceneController implements Initializable {
 	
 	private GameController gameController;
+	private HighScores highScores;
 	private String fontUrl = "file:src/main/resources/fonts/joystix monospace.ttf";
+	private int score;
 	
 	@FXML
 	private Label endScore;
 	
 	@FXML 
-	private Text yourScore;
-	
-	@FXML
-	private Text nameText;
+	private Text yourScore, nameText;
 	
 	@FXML 
 	private TextField username;
@@ -43,18 +43,38 @@ public class EndSceneController implements Initializable {
 		
 	}
 	
+	public void setHighScores(HighScores highScores) {
+		
+		this.highScores = highScores;
+		
+	}
+	
 	public void setEndScore(int score) {
 		
+		this.score = score;
 		endScore.setText(Integer.toString(score));
 		
 	}
 	
 	@FXML
-	private void enter() {
+	public void keyTyped() {
 		
-		System.out.println(username.getText().isEmpty());
-		//gameController.nextLevel();
+		if(username.getText().length() > 10) {
+			
+			username.setText(username.getText().substring(0, 10));
+			username.positionCaret(10);
+		}
 		
+	}
+	
+	@FXML
+	private void enter() throws IOException {
+		
+		highScores.newScore(username.getText(), score);
+		gameController.setHSList();
+		gameController.nextLevel();
+		
+			
 	}
 	
 }

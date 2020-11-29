@@ -31,7 +31,7 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <TextField fx:id="username" alignment="CENTER" layoutX="144.0" layoutY="449.0" prefHeight="42.0" prefWidth="313.0" promptText="Name" style="-fx-background-color: #03053f; -fx-text-fill: #5eefc9; -fx-prompt-text-fill: #adeddc;" />
+      <TextField fx:id="username" alignment="CENTER" layoutX="144.0" layoutY="449.0" onKeyTyped="#keyTyped" prefHeight="42.0" prefWidth="313.0" promptText="Name" style="-fx-background-color: #03053f; -fx-text-fill: #5eefc9; -fx-prompt-text-fill: #adeddc;" />
       <Button layoutX="209.0" layoutY="552.0" mnemonicParsing="false" onMouseClicked="#enter" prefHeight="2.0" prefWidth="181.0" textAlignment="CENTER">
          <graphic>
             <ImageView fitHeight="83.0" fitWidth="165.0" preserveRatio="true">

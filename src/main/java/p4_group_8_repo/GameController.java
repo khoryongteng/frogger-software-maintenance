@@ -22,8 +22,9 @@ public class GameController {
 	private MusicPlayer musicPlayer = new MusicPlayer();
 	private StartSceneController startSceneController;
 	private EndSceneController endSceneController;
+	private HSSceneController hsSceneController;
 	
-	public GameController(Stage primaryStage, StartSceneController startSceneController, EndSceneController endSceneController) throws IOException {
+	public GameController(Stage primaryStage, StartSceneController startSceneController, EndSceneController endSceneController, HSSceneController hsSceneController) throws IOException {
 		
 		this.startSceneController = startSceneController;
 		FXMLLoader startSceneLoader = new FXMLLoader(getClass().getResource("/views/StartScene.fxml"));
@@ -34,6 +35,11 @@ public class GameController {
 		FXMLLoader endSceneLoader = new FXMLLoader(getClass().getResource("/views/EndScene.fxml"));
 		endSceneLoader.setController(endSceneController);
 		Pane endScene = endSceneLoader.load();
+		
+		this.hsSceneController = hsSceneController;
+		FXMLLoader hsSceneLoader = new FXMLLoader(getClass().getResource("/views/HighScoreScene.fxml"));
+		hsSceneLoader.setController(hsSceneController);
+		Pane hsScene = hsSceneLoader.load();
 		
 		scene  = new Scene(startScene, 600, 800);
 		primaryStage.setScene(scene);
@@ -47,6 +53,7 @@ public class GameController {
 	    sceneController.addScene(1, levels[0]);
 	    sceneController.addScene(2, levels[1]);
 	    sceneController.addScene(3, endScene);
+	    sceneController.addScene(4, hsScene);
 	    
 	    sceneController.activate(currentScene);
 	    
@@ -69,6 +76,12 @@ public class GameController {
 			stop();
 			
 		}
+		
+	}
+	
+	public void setHSList() {
+		
+		hsSceneController.setScoreText();
 		
 	}
 	

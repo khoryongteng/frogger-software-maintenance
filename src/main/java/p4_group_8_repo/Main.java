@@ -23,12 +23,17 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
+		HighScores highScores = new HighScores();
+		
 		StartSceneController startSceneController = new StartSceneController();
 		EndSceneController endSceneController = new EndSceneController();
-		GameController gameController = new GameController(primaryStage, startSceneController, endSceneController);
+		HSSceneController hsSceneController= new HSSceneController(highScores);
+		GameController gameController = new GameController(primaryStage, startSceneController, endSceneController, hsSceneController);
+		
 		
 		startSceneController.setGameController(gameController);
 		endSceneController.setGameController(gameController);
+		endSceneController.setHighScores(highScores);
 	}
 	
 	
