@@ -1,10 +1,44 @@
 package p4_group_8_repo;
 
-public class Level2 extends Level {
+public class Level2 extends World implements Level {
 
+	private Digit[] scoreDigit;
+	private Animal animal;
+	
 	public Level2() {
 		
-		super();
+		add(new BackgroundImage());
+		
+		generateScoreboard();
+		
+		setLevelObjects();
+		
+		this.animal = new Animal();
+		add(this.animal);
+		
+	}
+	
+	private void generateScoreboard() {
+		
+		Digit[] scoreDigit =  new Digit[4];
+		
+		scoreDigit[0] = new Digit(0, 30, 360, 25);
+		scoreDigit[1] = new Digit(0, 30, 330, 25);
+		scoreDigit[2] = new Digit(0, 30, 300, 25);
+		scoreDigit[3] = new Digit(0, 30, 270, 25);
+		
+		for(int i = 0;i < scoreDigit.length; i++) {
+			
+			add(scoreDigit[i]);
+			
+		}
+		
+		this.scoreDigit = scoreDigit;
+		
+	}
+	
+	private void setLevelObjects() {
+		
 		add(new ShortLog(0, 166, 0.75));
 		add(new ShortLog(220, 166, 0.75));
 		add(new ShortLog(440, 166, 0.75));
@@ -24,10 +58,7 @@ public class Level2 extends Level {
 		add(new End(141 + 141-13,96));
 		add(new End(141 + 141-13+141-13+1,96));
 		add(new End(141 + 141-13+141-13+141-13+3,96));
-		animal = new Animal("file:src/main/resources/froggerUp.png");
-		add(animal);
 		
-
 		/*
 		add(new ShortLog(0, 166, 0.75));
 		add(new ShortLog(220, 166, 0.75));
@@ -63,5 +94,26 @@ public class Level2 extends Level {
 		*/
 		
 	}
+	
+	public void setScore(int n) {
+		
+    	for(int i=0;i<4;i++) {
+    		
+    		int d = n / 10;
+    		int k = n - d * 10;
+    		scoreDigit[i].setDigit(k);
+    		n = d;
+    		
+    	}
+		
+	}
+	
+	public Animal getAnimal() {
+		
+		return animal;
+		
+	}
+	
+	
 
 }

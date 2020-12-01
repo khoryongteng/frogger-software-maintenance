@@ -106,8 +106,10 @@ public abstract class World extends Pane {
         return someArray;
     }
 
-    public abstract void act(long now);
+    public void act(long now) {
+    	
+    	
     
-    public abstract void controlsHandler(KeyEvent event);
+    }
     
 }

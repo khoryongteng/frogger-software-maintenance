@@ -5,9 +5,9 @@ import javafx.scene.image.Image;
 public class BackgroundImage extends Actor{
 
 	//Constructor 
-	public BackgroundImage(String imageLink) {
+	public BackgroundImage() {
 		
-		setImage(new Image(imageLink, 600, 800, true, true));
+		setImage(new Image("file:src/main/resources/iKogsKW.png", 600, 800, true, true));
 		
 	}
 	
@@ -17,6 +17,4 @@ public class BackgroundImage extends Actor{
 		
 	}
 	
-	
-
 }

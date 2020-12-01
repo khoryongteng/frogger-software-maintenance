@@ -69,14 +69,14 @@ public class GameController {
             	
             	if (scene.getRoot() instanceof Level) {
             		
-            		if(((Level)scene.getRoot()).animal.changeScore()) {
+            		if(((Level)scene.getRoot()).getAnimal().changeScore()) {
             			
-            			totalScore = savedScore + ((Level)scene.getRoot()).animal.getPoints();
+            			totalScore = savedScore + ((Level)scene.getRoot()).getAnimal().getPoints();
             			((Level)scene.getRoot()).setScore(totalScore);
             			
             		}
             		
-            		if(((Level)scene.getRoot()).animal.getStop()) {
+            		if(((Level)scene.getRoot()).getAnimal().getStop()) {
             			
             			savedScore = totalScore;
             			nextLevel();

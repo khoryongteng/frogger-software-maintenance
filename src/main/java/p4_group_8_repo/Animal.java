@@ -32,8 +32,8 @@ public class Animal extends Actor {
 	double w = 800;
 	ArrayList<End> inter = new ArrayList<End>();
 	
-	public Animal(String imageLink) {
-		setImage(new Image(imageLink, imgSize, imgSize, true, true));
+	public Animal() {
+		
 		setX(300);
 		setY(679.8+movement);
 		imgW1 = new Image("file:src/main/resources/froggerUp.png", imgSize, imgSize, true, true);
@@ -44,6 +44,7 @@ public class Animal extends Actor {
 		imgA2 = new Image("file:src/main/resources/froggerLeftJump.png", imgSize, imgSize, true, true);
 		imgS2 = new Image("file:src/main/resources/froggerDownJump.png", imgSize, imgSize, true, true);
 		imgD2 = new Image("file:src/main/resources/froggerRightJump.png", imgSize, imgSize, true, true);
+		setImage(imgW1);
 		setKeyListener();
 		
 	}
