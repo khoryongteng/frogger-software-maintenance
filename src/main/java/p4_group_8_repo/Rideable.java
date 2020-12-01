@@ -1,7 +1,5 @@
 package p4_group_8_repo;
 
-import javafx.scene.image.Image;
-
 public abstract class Rideable extends Actor {
 
 	private double speed;
@@ -14,25 +12,35 @@ public abstract class Rideable extends Actor {
 		
 	}
 	
-		@Override
-		public void act(long now) {
-			move(speed , 0);
-			KeepWithinWindow(speed);
+	private void KeepWithinWindow(double speed) {
+			
+		if (getX()>600 && speed>0) {
+			
+			setX(-180);
+			
 		}
+	
+		if (getX()<-300 && speed<0) {
+			
+			setX(700);
+			
+		}
+				
+			
+	}
 		
-		private void KeepWithinWindow(double speed) {
-			
-			if (getX()>600 && speed>0)
-				setX(-180);
-			if (getX()<-300 && speed<0)
-				setX(700);
-			
-		}
+	@Override
+	public void act(long now) {
 		
-		public double getSpeed() {
+		move(speed , 0);
+		KeepWithinWindow(speed);
+		
+	}
+		
+	public double getSpeed() {
 			
-			return speed;
+		return speed;
 			
-		}
+	}
 	
 }

@@ -2,7 +2,7 @@ package p4_group_8_repo;
 
 import javafx.scene.image.Image;
 
-public class WetTurtle extends Rideable{
+public class WetTurtle extends Rideable {
 	Image turtleframe1 = new Image("file:src/main/resources/TurtleAnimation1.png", 130, 130, true, true);
 	Image turtleframe2 = new Image("file:src/main/resources/TurtleAnimation2Wet.png", 130, 130, true, true);
 	Image turtleframe3 = new Image("file:src/main/resources/TurtleAnimation3Wet.png", 130, 130, true, true);
@@ -20,26 +20,26 @@ public class WetTurtle extends Rideable{
 	}
 	
 	//TurtleAnimation by set image
-		private void TurtleState(long now) {
+	private void TurtleState(long now) {
 				
-			if (now/900000000  % 4 ==0) {
-				setImage(turtleframe2);
-				sunk = false;
-				
-			}
-			else if (now/900000000 % 4 == 1) {
-				setImage(turtleframe1);
-				sunk = false;
-			}
-			else if (now/900000000 %4 == 2) {
-				setImage(turtleframe3);
-				sunk = false;
-			} else if (now/900000000 %4 == 3) {
-				setImage(turtleframe4);
-				sunk = true;
-			}
+		if (now/900000000  % 4 ==0) {
+			setImage(turtleframe2);
+			sunk = false;
 				
 		}
+		else if (now/900000000 % 4 == 1) {
+			setImage(turtleframe1);
+			sunk = false;
+		}
+		else if (now/900000000 %4 == 2) {
+			setImage(turtleframe3);
+			sunk = false;
+		} else if (now/900000000 %4 == 3) {
+			setImage(turtleframe4);
+			sunk = true;
+		}
+				
+	}
 	
 	//Action when method called
 	@Override
@@ -50,7 +50,8 @@ public class WetTurtle extends Rideable{
 		KeepWithinWindow(speed);
 		
 	}
-		
+	
+	
 	//Keep turtle within game window borders
 	private void KeepWithinWindow(double speed) {
 			
@@ -60,6 +61,7 @@ public class WetTurtle extends Rideable{
 			setX(600);
 		
 	}
+	
 	
 	//Return if turtle is sunk
 	public boolean isSunk() {

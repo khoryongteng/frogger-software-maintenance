@@ -2,7 +2,7 @@ package p4_group_8_repo;
 
 import javafx.scene.image.Image;
 
-public class Turtle extends Rideable{
+public class Turtle extends Rideable {
 	Image turtleframe1 = new Image("file:src/main/resources/TurtleAnimation1.png", 130, 130, true, true);
 	Image turtleframe2 = new Image("file:src/main/resources/TurtleAnimation2.png", 130, 130, true, true);
 	Image turtleframe3 = new Image("file:src/main/resources/TurtleAnimation3.png", 130, 130, true, true);
