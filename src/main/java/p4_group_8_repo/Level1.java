@@ -2,38 +2,19 @@ package p4_group_8_repo;
 
 public class Level1 extends World implements Level {
 
-	private Digit[] scoreDigit;
+	private Scoreboard scoreboard;
 	private Animal animal;
 	
 	public Level1() {
 		
 		add(new BackgroundImage());
 		
-		generateScoreboard();
+		scoreboard = new Scoreboard(this);
 		
 		setLevelObjects();
 		
 		this.animal = new Animal();
 		add(this.animal);
-		
-	}
-	
-	private void generateScoreboard() {
-		
-		Digit[] scoreDigit =  new Digit[4];
-		
-		scoreDigit[0] = new Digit(0, 30, 360, 25);
-		scoreDigit[1] = new Digit(0, 30, 330, 25);
-		scoreDigit[2] = new Digit(0, 30, 300, 25);
-		scoreDigit[3] = new Digit(0, 30, 270, 25);
-		
-		for(int i = 0;i < scoreDigit.length; i++) {
-			
-			add(scoreDigit[i]);
-			
-		}
-		
-		this.scoreDigit = scoreDigit;
 		
 	}
 	
@@ -95,16 +76,9 @@ public class Level1 extends World implements Level {
 		
 	}
 	
-	public void setScore(int n) {
+	public Scoreboard getScoreboard() {
 		
-    	for(int i=0;i<4;i++) {
-    		
-    		int d = n / 10;
-    		int k = n - d * 10;
-    		scoreDigit[i].setDigit(k);
-    		n = d;
-    		
-    	}
+		return scoreboard;
 		
 	}
 	
