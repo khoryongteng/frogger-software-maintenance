@@ -13,8 +13,8 @@ public class Level2 extends World implements Level {
 		
 		setLevelObjects();
 		
-		this.animal = new Animal();
-		add(this.animal);
+		animal = new Animal();
+		add(animal);
 		
 	}
 	
