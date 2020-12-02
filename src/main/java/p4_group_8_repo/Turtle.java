@@ -14,25 +14,29 @@ public class Turtle extends Rideable {
 		super(x, y, speed);
 		this.speed = speed;
 		setImage(turtleframe2);
+		
 	}
 	
 	//TurtleAnimation by set image
-		private void TurtleAnimation(long now) {
+	private void TurtleAnimation(long now) {
 			
-			if (now/900000000  % 3 ==0) {
-				setImage(turtleframe2);
-				
-			}
-			else if (now/900000000 % 3 == 1) {
-				setImage(turtleframe1);
-				
-			}
-			else if (now/900000000 %3 == 2) {
-				setImage(turtleframe3);
-				
-			}
+		if (now/900000000  % 3 ==0) {
 			
+			setImage(turtleframe2);
+				
 		}
+		else if (now/900000000 % 3 == 1) {
+			
+			setImage(turtleframe1);
+				
+		}
+		else if (now/900000000 %3 == 2) {
+			
+			setImage(turtleframe3);
+				
+		}
+			
+	}
 	
 	//Action when method called
 	@Override

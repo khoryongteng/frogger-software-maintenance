@@ -28,7 +28,7 @@ public class Main extends Application {
 		
 		//Models
 		HighScores highScores = new HighScores();
-		World[] levels = new World[2];
+		Level[] levels = new Level[2];
 		levels[0] = new Level1();
 		levels[1] = new Level2();
 		

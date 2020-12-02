@@ -18,7 +18,7 @@ public class LongTruck extends Obstacle {
 			setImage(new Image("file:src/main/resources/truck2Right.png", 200, 200, true, true));
 			
 		}
-		else if (speed < 0) {
+		else {
 			
 			setImage(new Image("file:src/main/resources/truck2Left.png", 200, 200, true, true));
 		

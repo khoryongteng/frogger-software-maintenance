@@ -1,15 +1,35 @@
 package p4_group_8_repo;
 
-public interface Level {
+public abstract class Level extends World {
 	
-	public Scoreboard getScoreboard();
+	private Scoreboard scoreboard;
+	private Animal animal;
 	
-	public Animal getAnimal();
+	public Level() {
+		
+		add(new BackgroundImage());
+		scoreboard = new Scoreboard(this);
+		animal = new Animal();
+		add(animal);
+		
+	}
 	
-	public void add(Actor actor);
+	public Scoreboard getScoreboard() {
+		
+		return scoreboard;
+		
+	}
 	
-	public void stop();
+	public Animal getAnimal() {
+		
+		return animal;
+		
+	}
 	
-	public void start();
+	public void setAnimaltoFront() {
+		
+		animal.toFront();
+		
+	}
 	
 }

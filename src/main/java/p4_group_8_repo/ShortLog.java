@@ -11,5 +11,5 @@ public class ShortLog extends Rideable {
 		setImage(new Image("file:src/main/resources/log3.png", 150, 150, true, true));
 		
 	}
-
+	
 }

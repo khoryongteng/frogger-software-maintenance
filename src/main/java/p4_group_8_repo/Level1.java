@@ -1,24 +1,8 @@
 package p4_group_8_repo;
 
-public class Level1 extends World implements Level {
-
-	private Scoreboard scoreboard;
-	private Animal animal;
+public class Level1 extends Level{
 	
 	public Level1() {
-		
-		add(new BackgroundImage());
-		
-		scoreboard = new Scoreboard(this);
-		
-		setLevelObjects();
-		
-		animal = new Animal();
-		add(animal);
-		
-	}
-	
-	private void setLevelObjects() {
 		
 		add(new ShortLog(0, 166, 0.75));
 		add(new ShortLog(220, 166, 0.75));
@@ -39,7 +23,7 @@ public class Level1 extends World implements Level {
 		add(new End(141 + 141-13,96));
 		add(new End(141 + 141-13+141-13+1,96));
 		add(new End(141 + 141-13+141-13+141-13+3,96));
-		
+		setAnimaltoFront();
 		/*
 		add(new ShortLog(0, 166, 0.75));
 		add(new ShortLog(220, 166, 0.75));
@@ -73,19 +57,6 @@ public class Level1 extends World implements Level {
 		add(new LongTruck(500, 540, 1));
 		add(new Car(500, 490, -5));
 		*/
-		
-	}
-	
-	public Scoreboard getScoreboard() {
-		
-		return scoreboard;
-		
-	}
-	
-	public Animal getAnimal() {
-		
-		return animal;
-		
 	}
 	
 }
