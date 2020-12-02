@@ -1,6 +1,7 @@
 package p4_group_8_repo;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXMLLoader;
@@ -111,7 +112,7 @@ public class GameController {
         
     }
     
-    public void restart() {
+    public void restart() throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
     	
     	savedScore = 0;
     	totalScore = 0;

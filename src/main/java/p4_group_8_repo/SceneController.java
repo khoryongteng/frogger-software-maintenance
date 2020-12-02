@@ -1,5 +1,6 @@
 package p4_group_8_repo;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 
 import javafx.scene.Scene;
@@ -60,18 +61,14 @@ public class SceneController {
 
     }
     
-    public void resetScenes() {
+    public void resetScenes() throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
     	
     	for (int i = 0; i < screenMap.size(); i++) {
     		
-    		if (screenMap.get(i) instanceof Level1) {
+    		if (screenMap.get(i) instanceof Level) {
     			
-    			screenMap.replace(i, new Level1());
-    			
-    		}
-    		if (screenMap.get(i) instanceof Level2) {
-    			
-    			screenMap.replace(i, new Level2());
+    			Class<? extends Pane> cls = screenMap.get(i).getClass();
+    			screenMap.replace(i, cls.getDeclaredConstructor().newInstance());
     			
     		}
     		

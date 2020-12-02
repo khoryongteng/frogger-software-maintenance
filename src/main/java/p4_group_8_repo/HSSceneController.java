@@ -1,5 +1,6 @@
 package p4_group_8_repo;
 
+import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -94,7 +95,7 @@ public class HSSceneController implements Initializable{
 	}
 	
 	@FXML
-	public void retry() {
+	public void retry() throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 		
 		gameController.restart();
 		
