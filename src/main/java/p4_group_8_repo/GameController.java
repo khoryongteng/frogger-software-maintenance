@@ -41,7 +41,7 @@ public class GameController {
 	
 	public void nextLevel() {
 		
-		sceneController.changeScene(++currentScene);
+		nextScene();
 		
 		if (scene.getRoot() instanceof Level) {
 			
@@ -53,6 +53,18 @@ public class GameController {
 			stop();
 			
 		}
+		
+	}
+	
+	public void nextScene() {
+		
+		sceneController.changeScene(++currentScene);
+		
+	}
+	
+	public void previousScene() {
+		
+		sceneController.changeScene(--currentScene);
 		
 	}
 	
@@ -98,7 +110,7 @@ public class GameController {
 	
 	public void start() {
 	
-		currentScene = 1;
+		currentScene = 2;
 		sceneController.activate(currentScene);
     	createTimer();
         timer.start();

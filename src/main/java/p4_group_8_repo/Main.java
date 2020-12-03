@@ -34,6 +34,7 @@ public class Main extends Application {
 		
 		//Setup Scene Controllers
 		StartSceneController startSceneController = new StartSceneController();
+		InfoSceneController infoSceneController = new InfoSceneController();
 		EndSceneController endSceneController = new EndSceneController(highScores);
 		HSSceneController hsSceneController= new HSSceneController(highScores);
 
@@ -41,6 +42,10 @@ public class Main extends Application {
 		FXMLLoader startSceneLoader = new FXMLLoader(getClass().getResource("/views/StartScene.fxml"));
 		startSceneLoader.setController(startSceneController);
 		Pane startScene = startSceneLoader.load();
+		
+		FXMLLoader infoSceneLoader = new FXMLLoader(getClass().getResource("/views/InfoScene.fxml"));
+		infoSceneLoader.setController(infoSceneController);
+		Pane infoScene = infoSceneLoader.load();
 		
 		FXMLLoader endSceneLoader = new FXMLLoader(getClass().getResource("/views/EndScene.fxml"));
 		endSceneLoader.setController(endSceneController);
@@ -56,16 +61,18 @@ public class Main extends Application {
 		SceneController sceneController = new SceneController(scene, 5);
 		
 		sceneController.addScene(0, startScene);
-		sceneController.addScene(1, levels[0]);
-		sceneController.addScene(2, levels[1]);
-		sceneController.addScene(3, endScene);
-		sceneController.addScene(4, hsScene);
+		sceneController.addScene(1, infoScene);
+		sceneController.addScene(2, levels[0]);
+		sceneController.addScene(3, levels[1]);
+		sceneController.addScene(4, endScene);
+		sceneController.addScene(5, hsScene);
 		
 		//Setup GameController
 		GameController gameController = new GameController(scene, sceneController, endSceneController, hsSceneController);
 		
 		//Link SceneControllers to GameController
 		startSceneController.setGameController(gameController);
+		infoSceneController.setGameController(gameController);
 		endSceneController.setGameController(gameController);
 		hsSceneController.setGameController(gameController);
 		

@@ -1,6 +1,7 @@
 package p4_group_8_repo;
 
 public abstract class Obstacle extends Actor {
+	
 	private int speed;
 	
 	//Constructor

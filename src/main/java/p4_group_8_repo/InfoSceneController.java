@@ -2,7 +2,7 @@ package p4_group_8_repo;
 
 import javafx.fxml.FXML;
 
-public class StartSceneController {
+public class InfoSceneController {
 
 	private GameController gameController;
 	
@@ -13,16 +13,9 @@ public class StartSceneController {
 	}
 	
 	@FXML
-	private void startGame() {
+	private void exitInfo() {
 		
-		gameController.start();
-		
-	}
-	
-	@FXML
-	private void openInfo() {
-		
-		gameController.nextScene();
+		gameController.previousScene();
 		
 	}
 	

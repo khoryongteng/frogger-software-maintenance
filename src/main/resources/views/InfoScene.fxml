@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #03053f;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fill="WHITE" layoutX="134.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How to Play" textAlignment="CENTER" wrappingWidth="328.58489990234375">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="126.0" layoutY="81.0" preserveRatio="true" smooth="false">
+         <image>
+            <Image url="@../wKey.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="126.0" layoutY="148.0" preserveRatio="true" smooth="false">
+         <image>
+            <Image url="@../aKey.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="126.0" layoutY="215.0" preserveRatio="true" smooth="false">
+         <image>
+            <Image url="@../sKey.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="126.0" layoutY="282.0" preserveRatio="true" smooth="false">
+         <image>
+            <Image url="@../dKey.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="215.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to Move Forwards">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="215.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to Move Left">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="215.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to Move Backwards">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="215.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to Move Right" wrappingWidth="257.75390625">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Text fill="#f1d500" layoutX="43.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Every step forward is 10 points" textAlignment="CENTER" wrappingWidth="513.1972961425781">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#f1d500" layoutX="43.0" layoutY="441.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arriving home safely scores 50 points" textAlignment="CENTER" wrappingWidth="513.1972961425781">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#f1d500" layoutX="43.0" layoutY="520.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Every death deducts 50 points when above 50 points" textAlignment="CENTER" wrappingWidth="513.1972961425781">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#f1d500" layoutX="43.0" layoutY="591.0" strokeType="OUTSIDE" strokeWidth="0.0" text="After 5 frogs arrive home safely, the level ends" textAlignment="CENTER" wrappingWidth="513.1972961425781">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#f1d500" layoutX="43.0" layoutY="663.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scores of each level are saved individually" textAlignment="CENTER" wrappingWidth="513.1972961425784">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="37.0" fitWidth="34.0" layoutX="282.0" layoutY="384.0" preserveRatio="true">
+         <image>
+            <Image url="@../froggerUpJump.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="34.0" layoutX="313.0" layoutY="454.0" preserveRatio="true">
+         <image>
+            <Image url="@../FrogEnd.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="34.0" layoutX="282.0" layoutY="534.0" preserveRatio="true">
+         <image>
+            <Image url="@../waterdeath1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="41.0" layoutX="243.0" layoutY="454.0" preserveRatio="true">
+         <image>
+            <Image url="@../End.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="34.0" layoutX="261.0" layoutY="604.0" preserveRatio="true">
+         <image>
+            <Image url="@../FrogEnd.png" />
+         </image>
+      </ImageView>
+      <Text fill="#f1d500" layoutX="285.0" layoutY="629.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X5" textAlignment="CENTER" wrappingWidth="54.901603698730696">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fill="RED" layoutX="43.0" layoutY="708.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't get run over and don't drown!" textAlignment="CENTER" wrappingWidth="513.1972961425784">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="30.0" fitWidth="37.0" layoutX="249.0" layoutY="734.0" preserveRatio="true">
+         <image>
+            <Image url="@../froggerUp.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="90.0" layoutX="290.0" layoutY="734.0" preserveRatio="true">
+         <image>
+            <Image url="@../car1right.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="34.0" layoutX="250.0" layoutY="717.0" preserveRatio="true">
+         <image>
+            <Image url="@../waterdeath1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="51.0" fitWidth="55.0" layoutX="531.0" layoutY="14.0" onMouseClicked="#exitInfo" preserveRatio="true">
+         <image>
+            <Image url="@../XButton.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</Pane>

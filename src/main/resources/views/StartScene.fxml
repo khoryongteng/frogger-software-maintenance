@@ -14,7 +14,7 @@
             <Image url="@../StartSceneBackground.png" />
          </image>
       </ImageView>
-      <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" graphicTextGap="0.0" layoutX="190.0" layoutY="359.0" mnemonicParsing="false" onMouseClicked="#startGame" prefHeight="82.0" prefWidth="221.0" textAlignment="CENTER">
+      <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" graphicTextGap="0.0" layoutX="190.0" layoutY="305.0" mnemonicParsing="false" onMouseClicked="#startGame" prefHeight="82.0" prefWidth="221.0" textAlignment="CENTER">
          <graphic>
             <ImageView fitHeight="62.0" fitWidth="200.0">
                <image>
@@ -31,6 +31,18 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+      </Button>
+      <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" graphicTextGap="0.0" layoutX="149.0" layoutY="413.0" mnemonicParsing="false" onMouseClicked="#openInfo" prefHeight="82.0" prefWidth="302.0" textAlignment="CENTER">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="62.0" preserveRatio="true">
+               <image>
+                  <Image url="@../HowToPlay.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
    </children>
 </Pane>
