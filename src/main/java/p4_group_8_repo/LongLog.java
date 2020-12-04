@@ -8,7 +8,7 @@ public class LongLog extends Rideable {
 	public LongLog(int x, int y, double speed) {
 		
 		super(x, y, speed);
-		setImage(new Image("file:src/main/resources/logs.png", 300, 300, true, true));
+		setImage(new Image("file:src/main/resources/images/logs.png", 300, 300, true, true));
 		
 	}
 	

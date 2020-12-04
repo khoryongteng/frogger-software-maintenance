@@ -16,22 +16,22 @@
       </Text>
       <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="126.0" layoutY="81.0" preserveRatio="true" smooth="false">
          <image>
-            <Image url="@../wKey.png" />
+            <Image url="@../images/wKey.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="126.0" layoutY="148.0" preserveRatio="true" smooth="false">
          <image>
-            <Image url="@../aKey.png" />
+            <Image url="@../images/aKey.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="126.0" layoutY="215.0" preserveRatio="true" smooth="false">
          <image>
-            <Image url="@../sKey.png" />
+            <Image url="@../images/sKey.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="126.0" layoutY="282.0" preserveRatio="true" smooth="false">
          <image>
-            <Image url="@../dKey.png" />
+            <Image url="@../images/dKey.png" />
          </image>
       </ImageView>
       <Text fill="WHITE" layoutX="215.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to Move Forwards">
@@ -81,27 +81,27 @@
       </Text>
       <ImageView fitHeight="37.0" fitWidth="34.0" layoutX="282.0" layoutY="384.0" preserveRatio="true">
          <image>
-            <Image url="@../froggerUpJump.png" />
+            <Image url="@../images/froggerUpJump.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="40.0" fitWidth="34.0" layoutX="313.0" layoutY="454.0" preserveRatio="true">
          <image>
-            <Image url="@../FrogEnd.png" />
+            <Image url="@../images/FrogEnd.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="35.0" fitWidth="34.0" layoutX="282.0" layoutY="534.0" preserveRatio="true">
          <image>
-            <Image url="@../waterdeath1.png" />
+            <Image url="@../images/waterdeath1.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="37.0" fitWidth="41.0" layoutX="243.0" layoutY="454.0" preserveRatio="true">
          <image>
-            <Image url="@../End.png" />
+            <Image url="@../images/End.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="40.0" fitWidth="34.0" layoutX="261.0" layoutY="604.0" preserveRatio="true">
          <image>
-            <Image url="@../FrogEnd.png" />
+            <Image url="@../images/FrogEnd.png" />
          </image>
       </ImageView>
       <Text fill="#f1d500" layoutX="285.0" layoutY="629.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X5" textAlignment="CENTER" wrappingWidth="54.901603698730696">
@@ -116,22 +116,22 @@
       </Text>
       <ImageView fitHeight="30.0" fitWidth="37.0" layoutX="249.0" layoutY="734.0" preserveRatio="true">
          <image>
-            <Image url="@../froggerUp.png" />
+            <Image url="@../images/froggerUp.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="30.0" fitWidth="90.0" layoutX="290.0" layoutY="734.0" preserveRatio="true">
          <image>
-            <Image url="@../car1right.png" />
+            <Image url="@../images/car1right.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="35.0" fitWidth="34.0" layoutX="250.0" layoutY="717.0" preserveRatio="true">
          <image>
-            <Image url="@../waterdeath1.png" />
+            <Image url="@../images/waterdeath1.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="51.0" fitWidth="55.0" layoutX="531.0" layoutY="14.0" onMouseClicked="#exitInfo" preserveRatio="true">
          <image>
-            <Image url="@../XButton.png" />
+            <Image url="@../images/XButton.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />

@@ -8,7 +8,7 @@ public class ShortLog extends Rideable {
 	public ShortLog(int x, int y, double speed) {
 		
 		super(x, y, speed);
-		setImage(new Image("file:src/main/resources/log3.png", 150, 150, true, true));
+		setImage(new Image("file:src/main/resources/images/log3.png", 150, 150, true, true));
 		
 	}
 	

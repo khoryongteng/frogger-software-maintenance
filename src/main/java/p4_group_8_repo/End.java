@@ -7,7 +7,7 @@ public class End extends Actor{
 	
 	
 	public End(int x, int y) {
-		setImage(new Image("file:src/main/resources/End.png", 60, 60, true, true));
+		setImage(new Image("file:src/main/resources/images/End.png", 60, 60, true, true));
 		setX(x);
 		setY(y);
 	}
@@ -19,7 +19,7 @@ public class End extends Actor{
 	
 	//set activated to true when frog reached end, change to corresponding image
 	public void setEnd() {
-		setImage(new Image("file:src/main/resources/FrogEnd.png", 70, 70, true, true));
+		setImage(new Image("file:src/main/resources/images/FrogEnd.png", 70, 70, true, true));
 		activated = true;
 	}
 	

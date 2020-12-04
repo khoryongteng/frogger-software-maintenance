@@ -8,7 +8,7 @@ public class MediumLog extends Rideable {
 	public MediumLog(int x, int y, double speed) {
 		
 		super(x, y, speed);
-		setImage(new Image("file:src/main/resources/log2.png", 225, 225, true, true));
+		setImage(new Image("file:src/main/resources/images/log2.png", 225, 225, true, true));
 		
 	}
 	

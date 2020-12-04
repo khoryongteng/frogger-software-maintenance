@@ -3,10 +3,10 @@ package p4_group_8_repo;
 import javafx.scene.image.Image;
 
 public class WetTurtle extends Rideable {
-	Image turtleframe1 = new Image("file:src/main/resources/TurtleAnimation1.png", 130, 130, true, true);
-	Image turtleframe2 = new Image("file:src/main/resources/TurtleAnimation2Wet.png", 130, 130, true, true);
-	Image turtleframe3 = new Image("file:src/main/resources/TurtleAnimation3Wet.png", 130, 130, true, true);
-	Image turtleframe4 = new Image("file:src/main/resources/TurtleAnimation4Wet.png", 130, 130, true, true);
+	Image turtleframe1 = new Image("file:src/main/resources/images/TurtleAnimation1.png", 130, 130, true, true);
+	Image turtleframe2 = new Image("file:src/main/resources/images/TurtleAnimation2Wet.png", 130, 130, true, true);
+	Image turtleframe3 = new Image("file:src/main/resources/images/TurtleAnimation3Wet.png", 130, 130, true, true);
+	Image turtleframe4 = new Image("file:src/main/resources/images/TurtleAnimation4Wet.png", 130, 130, true, true);
 	private double speed;
 	boolean sunk = false;
 	

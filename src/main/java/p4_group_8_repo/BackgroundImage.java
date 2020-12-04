@@ -7,7 +7,7 @@ public class BackgroundImage extends Actor{
 	//Constructor 
 	public BackgroundImage() {
 		
-		setImage(new Image("file:src/main/resources/iKogsKW.png", 600, 800, true, true));
+		setImage(new Image("file:src/main/resources/images/iKogsKW.png", 600, 800, true, true));
 		
 	}
 	

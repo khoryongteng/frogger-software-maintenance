@@ -15,12 +15,12 @@ public class Car extends Obstacle {
 		
 		if(speed > 0) {
 			
-			setImage(new Image("file:src/main/resources/car1Right.png", 50, 50, true, true));
+			setImage(new Image("file:src/main/resources/images/car1Right.png", 50, 50, true, true));
 			
 		}
 		else {
 			
-			setImage(new Image("file:src/main/resources/car1Left.png", 50, 50, true, true));
+			setImage(new Image("file:src/main/resources/images/car1Left.png", 50, 50, true, true));
 		
 		}
 		

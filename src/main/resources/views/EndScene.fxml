@@ -13,7 +13,7 @@
    <children>
       <ImageView fitHeight="800.0" fitWidth="600.0">
          <image>
-            <Image url="@../EndBackground.png" />
+            <Image url="@../images/EndBackground.png" />
          </image>
       </ImageView>
       <Text fx:id="yourScore" fill="WHITE" layoutX="149.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Score:" textAlignment="CENTER" wrappingWidth="301.27092361450195">
@@ -36,7 +36,7 @@
          <graphic>
             <ImageView fitHeight="83.0" fitWidth="165.0" preserveRatio="true">
                <image>
-                  <Image url="@../EnterButton.png" />
+                  <Image url="@../images/EnterButton.png" />
                </image>
             </ImageView>
          </graphic>

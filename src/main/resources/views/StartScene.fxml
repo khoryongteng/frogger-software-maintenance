@@ -11,14 +11,14 @@
    <children>
       <ImageView fitHeight="800.0" fitWidth="600.0">
          <image>
-            <Image url="@../StartSceneBackground.png" />
+            <Image url="@../images/StartSceneBackground.png" />
          </image>
       </ImageView>
       <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" graphicTextGap="0.0" layoutX="190.0" layoutY="305.0" mnemonicParsing="false" onMouseClicked="#startGame" prefHeight="82.0" prefWidth="221.0" textAlignment="CENTER">
          <graphic>
             <ImageView fitHeight="62.0" fitWidth="200.0">
                <image>
-                  <Image url="@../StartButton.png" />
+                  <Image url="@../images/StartButton.png" />
                </image>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -39,7 +39,7 @@
          <graphic>
             <ImageView fitHeight="62.0" preserveRatio="true">
                <image>
-                  <Image url="@../HowToPlay.png" />
+                  <Image url="@../images/HowToPlay.png" />
                </image>
             </ImageView>
          </graphic>
