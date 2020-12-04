@@ -1,15 +1,12 @@
 package frogger.models.levels;
 
-import frogger.models.actors.End;
-import frogger.models.actors.LongLog;
-import frogger.models.actors.ShortLog;
-import frogger.models.actors.Turtle;
-import frogger.models.actors.WetTurtle;
+import frogger.models.actors.*;
 
 public class Level1 extends Level{
 	
 	public Level1() {
 		
+		//add(new Spikes(100, 590));
 		add(new ShortLog(0, 166, 0.75));
 		add(new ShortLog(220, 166, 0.75));
 		add(new ShortLog(440, 166, 0.75));

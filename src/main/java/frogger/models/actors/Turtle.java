@@ -3,9 +3,9 @@ package frogger.models.actors;
 import javafx.scene.image.Image;
 
 public class Turtle extends Rideable {
-	Image turtleframe1 = new Image("file:src/main/resources/images/TurtleAnimation1.png", 130, 130, true, true);
-	Image turtleframe2 = new Image("file:src/main/resources/images/TurtleAnimation2.png", 130, 130, true, true);
-	Image turtleframe3 = new Image("file:src/main/resources/images/TurtleAnimation3.png", 130, 130, true, true);
+	private Image turtleframe1 = new Image("file:src/main/resources/images/TurtleAnimation1.png", 130, 130, true, true);
+	private Image turtleframe2 = new Image("file:src/main/resources/images/TurtleAnimation2.png", 130, 130, true, true);
+	private Image turtleframe3 = new Image("file:src/main/resources/images/TurtleAnimation3.png", 130, 130, true, true);
 	private double speed;
 	
 	//Constructor
@@ -18,7 +18,7 @@ public class Turtle extends Rideable {
 	}
 	
 	//TurtleAnimation by set image
-	private void TurtleAnimation(long now) {
+	private void turtleAnimation(long now) {
 			
 		if (now/900000000  % 3 ==0) {
 			
@@ -42,7 +42,7 @@ public class Turtle extends Rideable {
 	@Override
 	public void act(long now) {
 
-		TurtleAnimation(now);	
+		turtleAnimation(now);	
 		move(speed , 0);
 		KeepWithinWindow(speed);
 		
