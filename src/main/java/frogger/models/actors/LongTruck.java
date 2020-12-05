@@ -4,14 +4,14 @@ import javafx.scene.image.Image;
 
 public class LongTruck extends Obstacle {
 
-	public LongTruck(int x, int y, int speed) {
+	public LongTruck(int x, int y, double speed) {
 		
 		super(x, y, speed);
 		setLongTruckImage(speed);
 		
 	}
 	
-	private void setLongTruckImage(int speed) {
+	private void setLongTruckImage(double speed) {
 		
 		if(speed > 0) {
 			

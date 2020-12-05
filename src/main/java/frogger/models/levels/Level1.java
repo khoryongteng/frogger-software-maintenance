@@ -6,10 +6,11 @@ public class Level1 extends Level{
 	
 	public Level1() {
 		
-		//add(new Spikes(100, 590));
-		add(new ShortLog(0, 166, 0.75));
-		add(new ShortLog(220, 166, 0.75));
-		add(new ShortLog(440, 166, 0.75));
+		add(new Crocodile(0, 166, 0.75));
+		add(new Spikes(100, 590));
+		//add(new ShortLog(0, 166, 0.75));
+		//add(new ShortLog(220, 166, 0.75));
+		//add(new ShortLog(440, 166, 0.75));
 		add(new LongLog(0, 276, -2));
 		add(new LongLog(400, 276, -2));
 		add(new ShortLog(50, 329, 0.75));

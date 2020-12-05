@@ -53,13 +53,20 @@ public class WetTurtle extends Rideable {
 	
 	
 	//Keep turtle within game window borders
-	private void KeepWithinWindow(double speed) {
-			
-		if (getX() > 600 && speed>0)
-			setX(-200);
-		if (getX() < -75 && speed<0)
-			setX(600);
+	protected void KeepWithinWindow(double speed) {
 		
+		if (getX() > 600 && speed>0) {
+			
+			setX(-200);
+			
+		}
+		
+		if (getX() < -75 && speed<0) {
+			
+			setX(600);
+			
+		}
+
 	}
 	
 	//Return if turtle is sunk

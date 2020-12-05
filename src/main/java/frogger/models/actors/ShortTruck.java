@@ -4,14 +4,14 @@ import javafx.scene.image.Image;
 
 public class ShortTruck extends Obstacle {
 
-	public ShortTruck(int x, int y, int speed) {
+	public ShortTruck(int x, int y, double speed) {
 		
 		super(x, y, speed);
 		setShortTruckImage(speed);
 		
 	}
 	
-	private void setShortTruckImage(int speed) {
+	private void setShortTruckImage(double speed) {
 		
 		if(speed > 0) {
 			

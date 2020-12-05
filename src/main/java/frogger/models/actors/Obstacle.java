@@ -2,10 +2,10 @@ package frogger.models.actors;
 
 public abstract class Obstacle extends Actor {
 	
-	private int speed;
+	protected double speed;
 	
 	//Constructor
-	public Obstacle(int x, int y, int speed) {
+	public Obstacle(int x, int y, double speed) {
 
 		setX(x);
 		setY(y);
@@ -21,7 +21,7 @@ public abstract class Obstacle extends Actor {
 	}
 	
 	//Keep obstacle within game window borders
-	private void KeepWithinWindow(int speed) {
+	private void KeepWithinWindow(double speed) {
 		
 		if (getX() > 600 && speed>0)
 			setX(-200);

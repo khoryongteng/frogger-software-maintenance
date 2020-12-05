@@ -12,4 +12,21 @@ public class ShortLog extends Rideable {
 		
 	}
 	
+	@Override
+	protected void KeepWithinWindow(double speed) {
+		
+		if (getX()>600 && speed>0) {
+			
+			setX(-180);
+			
+		}
+	
+		if (getX()<-300 && speed<0) {
+			
+			setX(700);
+			
+		}
+				
+	}
+	
 }

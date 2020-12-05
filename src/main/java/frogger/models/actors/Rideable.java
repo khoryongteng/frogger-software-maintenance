@@ -2,7 +2,7 @@ package frogger.models.actors;
 
 public abstract class Rideable extends Actor {
 
-	private double speed;
+	protected double speed;
 	
 	public Rideable(int x, int y, double speed) {
 		
@@ -12,22 +12,7 @@ public abstract class Rideable extends Actor {
 		
 	}
 	
-	private void KeepWithinWindow(double speed) {
-			
-		if (getX()>600 && speed>0) {
-			
-			setX(-180);
-			
-		}
-	
-		if (getX()<-300 && speed<0) {
-			
-			setX(700);
-			
-		}
-				
-			
-	}
+	protected abstract void KeepWithinWindow(double speed);
 		
 	@Override
 	public void act(long now) {

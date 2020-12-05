@@ -4,14 +4,14 @@ import javafx.scene.image.Image;
 
 public class Car extends Obstacle {
 
-	public Car(int x, int y, int speed) {
+	public Car(int x, int y, double speed) {
 		
 		super(x, y, speed);
 		setCarImage(speed);
 		
 	}
 	
-	private void setCarImage(int speed) {
+	private void setCarImage(double speed) {
 		
 		if(speed > 0) {
 			
