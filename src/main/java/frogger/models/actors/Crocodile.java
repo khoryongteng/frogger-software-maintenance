@@ -4,8 +4,8 @@ import javafx.scene.image.Image;
 
 public class Crocodile extends Rideable {
 
-	private Image crocodileRight = new Image("file:src/main/resources/images/crocodileRight.png", 150, 150, true, true);
-	private Image crocodileLeft = new Image("file:src/main/resources/images/crocodileLeft.png", 150, 150, true, true);
+	private Image crocodileRight = new Image("file:src/main/resources/images/crocodileRight.png", 160, 160, true, true);
+	private Image crocodileLeft = new Image("file:src/main/resources/images/crocodileLeft.png", 160, 160, true, true);
 	
 	public Crocodile(int x, int y, double speed) {
 		

@@ -1,8 +1,10 @@
 package frogger;
 
-import java.io.File;
-import java.util.List;
-
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import frogger.controllers.EndSceneController;
 import frogger.controllers.GameController;
 import frogger.controllers.HSSceneController;
@@ -10,21 +12,8 @@ import frogger.controllers.InfoSceneController;
 import frogger.controllers.SceneController;
 import frogger.controllers.StartSceneController;
 import frogger.models.HighScores;
-import frogger.models.levels.Level;
-import frogger.models.levels.Level1;
-import frogger.models.levels.Level2;
-import javafx.animation.AnimationTimer;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.layout.Pane;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import javafx.util.Duration;
+import frogger.models.levels.*;
+
 
 public class Main extends Application {
 	
@@ -35,12 +24,14 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
-		
 		//Models
 		HighScores highScores = new HighScores();
-		Level[] levels = new Level[2];
+		Level[] levels = new Level[5];
 		levels[0] = new Level1();
 		levels[1] = new Level2();
+		levels[2] = new Level3();
+		levels[3] = new Level4();
+		levels[4] = new Level5();
 		
 		//Setup Scene Controllers
 		StartSceneController startSceneController = new StartSceneController();
@@ -74,8 +65,11 @@ public class Main extends Application {
 		sceneController.addScene(1, infoScene);
 		sceneController.addScene(2, levels[0]);
 		sceneController.addScene(3, levels[1]);
-		sceneController.addScene(4, endScene);
-		sceneController.addScene(5, hsScene);
+		sceneController.addScene(4, levels[2]);
+		sceneController.addScene(5, levels[3]);
+		sceneController.addScene(6, levels[4]);
+		sceneController.addScene(7, endScene);
+		sceneController.addScene(8, hsScene);
 		sceneController.activate(0);
 		
 		//Setup GameController

@@ -4,6 +4,9 @@ import javafx.scene.image.Image;
 
 public class LongTruck extends Obstacle {
 
+	private Image longTruckRight = new Image("file:src/main/resources/images/truck2Right.png", 200, 200, true, true);
+	private Image longTruckLeft = new Image("file:src/main/resources/images/truck2Left.png", 200, 200, true, true);
+	
 	public LongTruck(int x, int y, double speed) {
 		
 		super(x, y, speed);
@@ -15,12 +18,12 @@ public class LongTruck extends Obstacle {
 		
 		if(speed > 0) {
 			
-			setImage(new Image("file:src/main/resources/images/truck2Right.png", 200, 200, true, true));
+			setImage(longTruckRight);
 			
 		}
 		else {
 			
-			setImage(new Image("file:src/main/resources/images/truck2Left.png", 200, 200, true, true));
+			setImage(longTruckLeft);
 		
 		}
 		

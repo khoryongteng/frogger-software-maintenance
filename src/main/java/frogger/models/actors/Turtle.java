@@ -57,7 +57,7 @@ public class Turtle extends Rideable {
 			
 		}
 		
-		if (getX() < -75 && speed<0) {
+		if (getX() < -130 && speed<0) {
 			
 			setX(600);
 			

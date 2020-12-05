@@ -11,7 +11,7 @@ public class WetTurtle extends Rideable {
 	boolean sunk = false;
 	
 	//Constructor
-	public WetTurtle(int x, int y, int speed) {
+	public WetTurtle(int x, int y, double speed) {
 		
 		super(x, y, speed);
 		this.speed = speed;
@@ -31,10 +31,10 @@ public class WetTurtle extends Rideable {
 			setImage(turtleframe1);
 			sunk = false;
 		}
-		else if (now/900000000 %4 == 2) {
+		else if (now/900000000 % 4 == 2) {
 			setImage(turtleframe3);
 			sunk = false;
-		} else if (now/900000000 %4 == 3) {
+		} else if (now/900000000 % 4 == 3) {
 			setImage(turtleframe4);
 			sunk = true;
 		}
@@ -61,7 +61,7 @@ public class WetTurtle extends Rideable {
 			
 		}
 		
-		if (getX() < -75 && speed<0) {
+		if (getX() < -130 && speed<0) {
 			
 			setX(600);
 			

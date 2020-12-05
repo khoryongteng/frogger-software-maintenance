@@ -17,7 +17,7 @@ public class LongLog extends Rideable {
 		
 		if (getX()>600 && speed>0) {
 			
-			setX(-180);
+			setX(-300);
 			
 		}
 	

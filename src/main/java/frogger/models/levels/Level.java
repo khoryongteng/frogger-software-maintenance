@@ -1,8 +1,7 @@
 package frogger.models.levels;
 
 import frogger.models.Scoreboard;
-import frogger.models.actors.Animal;
-import frogger.models.actors.BackgroundImage;
+import frogger.models.actors.*;
 
 public abstract class Level extends World {
 	
@@ -13,8 +12,14 @@ public abstract class Level extends World {
 		
 		add(new BackgroundImage());
 		scoreboard = new Scoreboard(this);
+		add(new End(13, 80));
+		add(new End(141, 80));
+		add(new End(269, 80));
+		add(new End(398, 80));
+		add(new End(528, 80));
 		animal = new Animal();
 		add(animal);
+		
 		
 	}
 	

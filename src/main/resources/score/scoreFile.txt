@@ -1,3 +1,4 @@
+meat	2780
 Meat	1940
 Meat	1720
 Meat	1620
@@ -7,4 +8,3 @@ wwwwwwwwww	1610
 Test	1600
 wwwwwwwwww	1590
 Meat	1590
-Meatasauru	1590
