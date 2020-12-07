@@ -3,11 +3,12 @@ package frogger.models.actors;
 import javafx.scene.image.Image;
 
 public class End extends Actor{
-	boolean activated = false;
-	
+	private boolean activated = false;
+	private Image end = new Image("file:src/main/resources/images/End.png", 49, 49, true, true);
+	private Image frogEnd = new Image("file:src/main/resources/images/FrogEnd.png", 49, 49, true, true);
 	
 	public End(int x, int y) {
-		setImage(new Image("file:src/main/resources/images/End.png", 60, 60, true, true));
+		setImage(end);
 		setX(x);
 		setY(y);
 	}
@@ -19,7 +20,7 @@ public class End extends Actor{
 	
 	//set activated to true when frog reached end, change to corresponding image
 	protected void setEnd() {
-		setImage(new Image("file:src/main/resources/images/FrogEnd.png", 70, 70, true, true));
+		setImage(frogEnd);
 		activated = true;
 	}
 	

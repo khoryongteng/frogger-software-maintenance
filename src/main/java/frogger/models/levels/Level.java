@@ -12,11 +12,11 @@ public abstract class Level extends World {
 		
 		add(new BackgroundImage());
 		scoreboard = new Scoreboard(this);
-		add(new End(13, 80));
-		add(new End(141, 80));
-		add(new End(269, 80));
-		add(new End(398, 80));
-		add(new End(528, 80));
+		add(new End(19, 95));
+		add(new End(148, 95));
+		add(new End(277, 95));
+		add(new End(405, 95));
+		add(new End(534, 95));
 		animal = new Animal();
 		add(animal);
 		

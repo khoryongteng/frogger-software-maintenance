@@ -1,3 +1,4 @@
+Teddy	3410
 Meat	2780
 Duck	2540
 Vegetable	1940
@@ -7,4 +8,3 @@ Jacob	1620
 Tofu	1610
 Mushroom	1610
 Chapati	1600
-Bibimbap	1590
