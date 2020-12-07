@@ -7,7 +7,7 @@ public class Level1 extends Level{
 	public Level1() {
 		
 		add(new LongLog(0, 166, 0.75));
-		add(new LongLog(500, 166, 0.75));
+		add(new LongLog(450, 166, 0.75));
 		
 		add(new Crocodile(0, 217, 1.5));
 		

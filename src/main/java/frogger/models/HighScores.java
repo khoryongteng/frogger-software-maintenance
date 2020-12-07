@@ -11,27 +11,35 @@ public class HighScores{
 	private int maxScores = 10;
 	private ArrayList<HighScore> scoreList;
 	
-	public HighScores() throws NumberFormatException, IOException {
+	public HighScores() {
 		
 		String line;
 		String[] parts;
 		int score;
 		
 		scoreList = new ArrayList<HighScore>(maxScores);
-					
-		BufferedReader file = new BufferedReader(new FileReader(scoreFile));
-
-		while ((line = file.readLine()) != null) {
+		
+		try {
 			
-			parts = line.split("\t", 2);
-			
-			score = Integer.parseInt(parts[1]);
+			BufferedReader file = new BufferedReader(new FileReader(scoreFile));
 
-			scoreList.add(new HighScore(parts[0], score));
+			while ((line = file.readLine()) != null) {
+				
+				parts = line.split("\t", 2);
+				
+				score = Integer.parseInt(parts[1]);
+
+				scoreList.add(new HighScore(parts[0], score));
+				
+			}
+
+			file.close();
+			
+		} catch (IOException e) {
+			
+			System.err.println("No high score file found, will create new high score file");
 			
 		}
-
-		file.close();
 		
 	}
 	
