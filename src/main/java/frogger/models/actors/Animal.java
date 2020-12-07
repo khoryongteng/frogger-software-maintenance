@@ -30,13 +30,13 @@ public class Animal extends Actor {
 	private int end = 0;
 	private boolean second = false;
 	private boolean noMove = false;
-	private double movement = 13.3333333*2;
-	private double movementX = 10.666666*2;
+	private static double movement = 13.3333333*2;
+	private static double movementX = 10.666666*2;
 	private boolean carDeath = false;
 	private boolean waterDeath = false;
 	private boolean changeScore = false;
 	private int deathFrame = 0;
-	private double w = 800;
+	private double currentDistance = 800;
 	
 	public Animal() {
 		
@@ -90,10 +90,10 @@ public class Animal extends Actor {
 	                }
 	                else {
 	                	
-	                	if (getY() < w) {
+	                	if (getY() < currentDistance) {
 	                		
 							changeScore = true;
-							w = getY();
+							currentDistance = getY();
 							points+=10;
 							
 						}
@@ -223,8 +223,13 @@ public class Animal extends Actor {
 				end--;
 				points-=50;
 			}
+			else {
+				
+				getIntersectingObjects(End.class).get(0).setEnd();
+				currentDistance = 800;
+				
+			}
 			
-			getIntersectingObjects(End.class).get(0).setEnd();
 			respawn(true);
 		}
 		else if (getY()<413){
@@ -290,7 +295,6 @@ public class Animal extends Actor {
 				
 			points+=50;
 			changeScore = true;
-			w=800;
 			end++;
 				
 		}

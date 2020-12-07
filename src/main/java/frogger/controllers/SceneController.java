@@ -9,11 +9,11 @@ import javafx.scene.layout.Pane;
 
 public class SceneController {
 
-	private HashMap<Integer, Pane> sceneMap;
+	private HashMap<Integer, Pane> sceneMap = new HashMap<>();;
     private Scene scene;
 
-    public SceneController(Scene scene, int numScene) {
-    	sceneMap = new HashMap<>(numScene);
+    public SceneController(Scene scene) {
+
         this.scene = scene;
         
     }

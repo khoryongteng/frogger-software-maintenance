@@ -59,7 +59,7 @@ public class Main extends Application {
 		//Setup SceneController
 		Scene scene  = new Scene(startScene, 600, 800);
 		
-		SceneController sceneController = new SceneController(scene, 5);
+		SceneController sceneController = new SceneController(scene);
 		
 		sceneController.addScene(0, startScene);
 		sceneController.addScene(1, infoScene);
