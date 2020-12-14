@@ -1,14 +1,16 @@
 package frogger.controllers;
 
+import java.io.IOException;
+
 import javafx.fxml.FXML;
 
 public class InfoSceneController {
 
 	private GameController gameController;
 	
-	public void setGameController(GameController gameController) {
+	public InfoSceneController() throws IOException {
 		
-		this.gameController = gameController;
+		this.gameController = GameController.GameController();
 		
 	}
 	

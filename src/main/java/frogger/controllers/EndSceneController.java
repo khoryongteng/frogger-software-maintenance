@@ -28,9 +28,10 @@ public class EndSceneController implements Initializable {
 	@FXML 
 	private TextField username;
 	
-	public EndSceneController(HighScores highScores) {
+	public EndSceneController(HighScores highScores) throws IOException {
 		
 		this.highScores = highScores;
+		this.gameController = GameController.GameController();
 		
 	}
 	
@@ -41,12 +42,6 @@ public class EndSceneController implements Initializable {
 		endScore.setFont(Font.loadFont(fontUrl, 50));
 		nameText.setFont(Font.loadFont(fontUrl, 30));
 		username.setFont(Font.loadFont(fontUrl, 22));
-		
-	}
-
-	public void setGameController(GameController gameController) {
-		
-		this.gameController = gameController;
 		
 	}
 	

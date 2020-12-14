@@ -15,6 +15,8 @@ import javafx.stage.Stage;
 
 public class GameController {
 
+	private static GameController gameController_instance = null;
+	
 	private AnimationTimer timer;
 	private int currentScene;
 	private int totalScore = 0;
@@ -25,13 +27,30 @@ public class GameController {
 	private HSSceneController hsSceneController;
 	private Scene scene;
 	
-	public GameController(Scene scene, SceneController sceneController, EndSceneController endSceneController, HSSceneController hsSceneController) throws IOException {
+	private GameController() throws IOException {
+		
+		currentScene = 0;
+		
+	}
+	
+	public static GameController GameController() throws IOException {
+		
+		if (gameController_instance == null) {
+			
+			gameController_instance = new GameController();
+			
+		}
+		
+		return gameController_instance;
+		
+	}
+	
+	public void setSceneControllers(Scene scene, SceneController sceneController, EndSceneController endSceneController, HSSceneController hsSceneController) {
 		
 		this.scene = scene;
 		this.sceneController = sceneController;
 		this.endSceneController = endSceneController;
 		this.hsSceneController = hsSceneController;
-		currentScene = 0;
 		
 	}
 	

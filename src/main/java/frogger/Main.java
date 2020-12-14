@@ -73,13 +73,8 @@ public class Main extends Application {
 		sceneController.activate(0);
 		
 		//Setup GameController
-		GameController gameController = new GameController(scene, sceneController, endSceneController, hsSceneController);
-		
-		//Link SceneControllers to GameController
-		startSceneController.setGameController(gameController);
-		infoSceneController.setGameController(gameController);
-		endSceneController.setGameController(gameController);
-		hsSceneController.setGameController(gameController);
+		GameController gameController = GameController.GameController();
+		gameController.setSceneControllers(scene, sceneController, endSceneController, hsSceneController);
 		
 		primaryStage.setScene(scene);
 	    primaryStage.setResizable(false);

@@ -1,5 +1,6 @@
 package frogger.controllers;
 
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -36,9 +37,10 @@ public class HSSceneController implements Initializable{
 	private Text[] scoreText;
 	private Text[] nameText;
 	
-	public HSSceneController(HighScores highScores) {
+	public HSSceneController(HighScores highScores) throws IOException {
 		
 		this.highScores = highScores;
+		this.gameController = GameController.GameController();
 		
 	}
 	
@@ -70,12 +72,6 @@ public class HSSceneController implements Initializable{
 			nameText[i].setFont(Font.loadFont(fontUrl, 22));
 			
 		}
-		
-	}
-	
-	public void setGameController(GameController gameController) {
-		
-		this.gameController = gameController;
 		
 	}
 
