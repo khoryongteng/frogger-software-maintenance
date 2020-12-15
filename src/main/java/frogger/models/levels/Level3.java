@@ -6,6 +6,8 @@ public class Level3 extends Level {
 	
 	public Level3() {
 		
+		add(new Digit(3, 30, 155, 17));
+		
 		add(new Crocodile(0, 166, 3));
 		
 		add(new Crocodile(440, 217, -2.5));

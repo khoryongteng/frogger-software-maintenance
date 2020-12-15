@@ -6,6 +6,8 @@ public class Level1 extends Level {
 	
 	public Level1() {
 		
+		add(new Digit(1, 30, 155, 17));
+		
 		add(new LongLog(0, 166, 0.75));
 		add(new LongLog(450, 166, 0.75));
 		

@@ -10,10 +10,10 @@ public class Scoreboard {
 		
 		scoreDigit =  new Digit[4];
 		
-		scoreDigit[0] = new Digit(0, 30, 360, 25);
-		scoreDigit[1] = new Digit(0, 30, 330, 25);
-		scoreDigit[2] = new Digit(0, 30, 300, 25);
-		scoreDigit[3] = new Digit(0, 30, 270, 25);
+		scoreDigit[0] = new Digit(0, 30, 550, 17);
+		scoreDigit[1] = new Digit(0, 30, 520, 17);
+		scoreDigit[2] = new Digit(0, 30, 490, 17);
+		scoreDigit[3] = new Digit(0, 30, 460, 17);
 		
 		for(int i = 0;i < scoreDigit.length; i++) {
 			

@@ -6,6 +6,8 @@ public class Level5 extends Level {
 
 	public Level5() {
 		
+		add(new Digit(5, 30, 155, 17));
+		
 		add(new ShortLog(0, 166, -0.5));
 		add(new ShortLog(250, 166, -0.5));
 		add(new ShortLog(500, 166, -0.5));

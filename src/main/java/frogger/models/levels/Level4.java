@@ -6,6 +6,8 @@ public class Level4 extends Level {
 
 	public Level4() {
 		
+		add(new Digit(4, 30, 155, 17));
+		
 		add(new Turtle(100, 166, 0.5));
 		add(new Turtle(500, 166, 0.5));
 		

@@ -6,6 +6,8 @@ public class Level2 extends Level {
 	
 	public Level2() {
 		
+		add(new Digit(2, 30, 155, 17));
+		
 		add(new ShortLog(0, 166, 0.75));
 		add(new ShortLog(220, 166, 0.75));
 		add(new ShortLog(440, 166, 0.75));
