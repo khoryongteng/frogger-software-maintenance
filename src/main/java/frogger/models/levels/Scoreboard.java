@@ -1,7 +1,6 @@
-package frogger.models;
+package frogger.models.levels;
 
 import frogger.models.actors.Digit;
-import frogger.models.levels.Level;
 
 public class Scoreboard {
 
@@ -24,7 +23,7 @@ public class Scoreboard {
 		
 	}
 	
-	public void setScore(int n) {
+	protected void setScore(int n) {
 		
     	for(int i=0;i<4;i++) {
     		

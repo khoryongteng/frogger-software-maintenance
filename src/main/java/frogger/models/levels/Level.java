@@ -1,6 +1,5 @@
 package frogger.models.levels;
 
-import frogger.models.Scoreboard;
 import frogger.models.actors.*;
 
 public abstract class Level extends World {
