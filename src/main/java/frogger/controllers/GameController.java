@@ -66,7 +66,7 @@ public class GameController {
 		
 		if (scene.getRoot() instanceof Level) {
 			
-			((Level)scene.getRoot()).getScoreboard().setScore(savedScore);
+			((Level)scene.getRoot()).setScore(savedScore);
 			
 		}
 		else {
@@ -103,14 +103,14 @@ public class GameController {
             	
             	if (scene.getRoot() instanceof Level) {
             		
-            		if(((Level)scene.getRoot()).getAnimal().changeScore()) {
+            		if(((Level)scene.getRoot()).changeScore()) {
             			
-            			totalScore = savedScore + ((Level)scene.getRoot()).getAnimal().getPoints();
-            			((Level)scene.getRoot()).getScoreboard().setScore(totalScore);
+            			totalScore = savedScore + ((Level)scene.getRoot()).getPoints();
+            			((Level)scene.getRoot()).setScore(totalScore);
             			
             		}
             		
-            		if(((Level)scene.getRoot()).getAnimal().getStop()) {
+            		if(((Level)scene.getRoot()).getStop()) {
             			
             			savedScore = totalScore;
             			nextLevel();

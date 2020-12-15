@@ -5,6 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
+
 import frogger.controllers.EndSceneController;
 import frogger.controllers.GameController;
 import frogger.controllers.HSSceneController;
@@ -12,7 +15,8 @@ import frogger.controllers.InfoSceneController;
 import frogger.controllers.SceneController;
 import frogger.controllers.StartSceneController;
 import frogger.models.HighScores;
-import frogger.models.levels.*;
+import frogger.models.levels.Level;
+import frogger.models.levels.LevelFactory;
 
 
 public class Main extends Application {
@@ -24,14 +28,11 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
+		LevelFactory levelFactory = new LevelFactory();
+		
 		//Models
 		HighScores highScores = new HighScores();
-		Level[] levels = new Level[5];
-		levels[0] = new Level1();
-		levels[1] = new Level2();
-		levels[2] = new Level3();
-		levels[3] = new Level4();
-		levels[4] = new Level5();
+		ArrayList<Level> levels = levelFactory.getLevels();
 		
 		//Setup Scene Controllers
 		StartSceneController startSceneController = new StartSceneController();
@@ -63,11 +64,11 @@ public class Main extends Application {
 		
 		sceneController.addScene(0, startScene);
 		sceneController.addScene(1, infoScene);
-		sceneController.addScene(2, levels[0]);
-		sceneController.addScene(3, levels[1]);
-		sceneController.addScene(4, levels[2]);
-		sceneController.addScene(5, levels[3]);
-		sceneController.addScene(6, levels[4]);
+		sceneController.addScene(2, levels.get(0));
+		sceneController.addScene(3, levels.get(1));
+		sceneController.addScene(4, levels.get(2));
+		sceneController.addScene(5, levels.get(3));
+		sceneController.addScene(6, levels.get(4));
 		sceneController.addScene(7, endScene);
 		sceneController.addScene(8, hsScene);
 		sceneController.activate(0);

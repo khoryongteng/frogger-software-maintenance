@@ -23,15 +23,27 @@ public abstract class Level extends World {
 		
 	}
 	
-	public Scoreboard getScoreboard() {
+	public boolean changeScore() {
 		
-		return scoreboard;
+		return animal.changeScore();
 		
 	}
 	
-	public Animal getAnimal() {
+	public void setScore(int score) {
 		
-		return animal;
+		scoreboard.setScore(score);
+		
+	}
+	
+	public boolean getStop() {
+		
+		return animal.getStop();
+		
+	}
+	
+	public int getPoints() {
+		
+		return animal.getPoints();
 		
 	}
 	
