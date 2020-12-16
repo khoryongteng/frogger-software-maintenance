@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 public class PlayerTest extends ApplicationTest{
 
 	private Player player;
-	private DummyLevel dummyLevel = new DummyLevel();
+	private DummyLevel level = new DummyLevel();
 	private double initialX;
 	private double initialY;
 	private FxRobot robot = new FxRobot();
@@ -28,10 +28,10 @@ public class PlayerTest extends ApplicationTest{
 		
 		
 		player = new Player();
-		dummyLevel.add(player);
+		level.add(player);
 		initialX = player.getX();
 		initialY = player.getY();
-		stage.setScene(new Scene(dummyLevel, 600, 800));
+		stage.setScene(new Scene(level, 600, 800));
 		stage.show();
 		
 	}
@@ -82,7 +82,7 @@ public class PlayerTest extends ApplicationTest{
 			robot.release(KeyCode.getKeyCode("A"));
 			
 		}
-		dummyLevel.start();
+		level.start();
 		assertFalse(player.getX() >= -20);
 	}
 	
@@ -95,7 +95,7 @@ public class PlayerTest extends ApplicationTest{
 			robot.release(KeyCode.getKeyCode("S"));
 			
 		}
-		dummyLevel.start();
+		level.start();
 		assertFalse(player.getY() <= 734);
 	}
 	
@@ -108,7 +108,7 @@ public class PlayerTest extends ApplicationTest{
 			robot.release(KeyCode.getKeyCode("D"));
 			
 		}
-		dummyLevel.start();
+		level.start();
 		assertFalse(player.getX() <= 580);
 	}
 
