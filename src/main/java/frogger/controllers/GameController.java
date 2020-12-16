@@ -27,7 +27,7 @@ public class GameController {
 	private HSSceneController hsSceneController;
 	private Scene scene;
 	
-	private GameController() throws IOException {
+	private GameController() {
 		
 		currentScene = 0;
 		
