@@ -37,7 +37,7 @@ public class Level4 extends Level {
 		add(new Car(400, 655, 1));
 		add(new Car(600, 655, 1));
 		
-		setAnimaltoFront();
+		setPlayertoFront();
 	
 	}
 	

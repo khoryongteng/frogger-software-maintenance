@@ -34,7 +34,7 @@ public class Level2 extends Level {
 		add(new LongTruck(500, 540, 1));
 		add(new Car(500, 490, -5));
 		
-		setAnimaltoFront();
+		setPlayertoFront();
 		
 	}
 	

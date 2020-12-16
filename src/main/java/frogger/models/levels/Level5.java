@@ -45,7 +45,7 @@ public class Level5 extends Level {
 		add(new ShortTruck(270, 655, 1));
 		add(new ShortTruck(540, 655, 1));
 		
-		setAnimaltoFront();
+		setPlayertoFront();
 		
 	}
 }

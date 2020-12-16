@@ -5,7 +5,7 @@ import frogger.models.actors.*;
 public abstract class Level extends World {
 	
 	private Scoreboard scoreboard;
-	private Player animal;
+	private Player player;
 	
 	public Level() {
 		
@@ -16,15 +16,15 @@ public abstract class Level extends World {
 		add(new End(277, 95));
 		add(new End(405, 95));
 		add(new End(534, 95));
-		animal = new Player();
-		add(animal);
+		player = new Player();
+		add(player);
 		
 		
 	}
 	
 	public boolean changeScore() {
 		
-		return animal.changeScore();
+		return player.changeScore();
 		
 	}
 	
@@ -36,19 +36,19 @@ public abstract class Level extends World {
 	
 	public boolean getStop() {
 		
-		return animal.getStop();
+		return player.getStop();
 		
 	}
 	
 	public int getPoints() {
 		
-		return animal.getPoints();
+		return player.getPoints();
 		
 	}
 	
-	public void setAnimaltoFront() {
+	public void setPlayertoFront() {
 		
-		animal.toFront();
+		player.toFront();
 		
 	}
 	

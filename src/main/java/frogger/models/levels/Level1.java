@@ -47,7 +47,7 @@ public class Level1 extends Level {
 		add(new Spikes(500, 640));
 		add(new Spikes(550, 640));
 		
-		setAnimaltoFront();
+		setPlayertoFront();
 		
 	}
 	

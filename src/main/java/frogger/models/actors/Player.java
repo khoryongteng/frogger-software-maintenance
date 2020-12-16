@@ -82,7 +82,7 @@ public class Player extends Actor {
 			
 				case W: 
 					move(0, -movement);
-	                animalAnimation(second, 'W');
+	                playerAnimation(second, 'W');
 	                if (second) {
 	                	
 	                	changeScore = false;
@@ -103,17 +103,17 @@ public class Player extends Actor {
 	                
 				case A:
 					move(-movementX, 0);
-					animalAnimation(second, 'A');
+					playerAnimation(second, 'A');
 	            	break;
 	            	
 				case S:
 					move(0, movement);
-					animalAnimation(second, 'S');
+					playerAnimation(second, 'S');
 	            	break;
 	            	
 				case D:
 					move(movementX, 0);
-					animalAnimation(second, 'D');
+					playerAnimation(second, 'D');
 	            	break;
 					
 			}
@@ -123,7 +123,7 @@ public class Player extends Actor {
 	}
 	
 	//Animation
-	private void animalAnimation(boolean second, char key){
+	private void playerAnimation(boolean second, char key){
 		
 		if (second) {
 			
