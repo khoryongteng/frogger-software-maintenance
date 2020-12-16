@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"p4_group_8_repo"}]
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"frogger"},{"l":"frogger.controllers"},{"l":"frogger.models"},{"l":"frogger.models.actors"},{"l":"frogger.models.levels"}]
