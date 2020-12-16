@@ -50,7 +50,7 @@ public class EndSceneController implements Initializable {
 		
 	}
 	
-	protected void setEndScore(int score) {
+	public void setEndScore(int score) {
 		
 		this.score = score;
 		endScore.setText(Integer.toString(score));

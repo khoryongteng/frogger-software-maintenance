@@ -109,7 +109,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Text fill="RED" layoutX="43.0" layoutY="708.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't get run over and don't drown!" textAlignment="CENTER" wrappingWidth="513.1972961425784">
+      <Text fill="RED" layoutX="43.0" layoutY="708.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't die!" textAlignment="CENTER" wrappingWidth="513.1972961425784">
          <font>
             <Font size="20.0" />
          </font>
@@ -129,7 +129,7 @@
             <Image url="@../images/waterdeath1.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="51.0" fitWidth="55.0" layoutX="531.0" layoutY="14.0" onMouseClicked="#exitInfo" preserveRatio="true">
+      <ImageView fx:id="quitButton" fitHeight="51.0" fitWidth="55.0" layoutX="531.0" layoutY="14.0" onMouseClicked="#exitInfo" preserveRatio="true">
          <image>
             <Image url="@../images/XButton.png" />
          </image>

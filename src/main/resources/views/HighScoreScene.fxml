@@ -22,7 +22,7 @@
             <Font size="36.0" />
          </font>
       </Text>
-      <Button layoutX="189.0" layoutY="581.0" mnemonicParsing="false" onMouseClicked="#retry" prefHeight="92.0" prefWidth="222.0">
+      <Button fx:id="retryButton" layoutX="189.0" layoutY="581.0" mnemonicParsing="false" onMouseClicked="#retry" prefHeight="92.0" prefWidth="222.0">
          <graphic>
             <ImageView fitHeight="70.0" fitWidth="200.0">
                <image>

@@ -29,6 +29,7 @@ public class StartSceneControllerTest extends ApplicationTest{
 		private Pane infoTestPane = new Pane();
 		private Pane gameTestPane = new Pane();
 	
+	@Override
 	public void start(Stage stage) throws IOException {
 		
 		StartSceneController startSceneController = new StartSceneController();
@@ -47,8 +48,10 @@ public class StartSceneControllerTest extends ApplicationTest{
 		stage.setScene(scene);
         stage.show();
         
-        sceneController.addScene(2, gameTestPane);
+        sceneController.addScene(0, startScene);
         sceneController.addScene(1, infoTestPane);
+        sceneController.addScene(2, gameTestPane);
+        
         
 	}
 	
