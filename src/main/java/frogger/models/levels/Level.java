@@ -5,7 +5,7 @@ import frogger.models.actors.*;
 public abstract class Level extends World {
 	
 	private Scoreboard scoreboard;
-	private Animal animal;
+	private Player animal;
 	
 	public Level() {
 		
@@ -16,7 +16,7 @@ public abstract class Level extends World {
 		add(new End(277, 95));
 		add(new End(405, 95));
 		add(new End(534, 95));
-		animal = new Animal();
+		animal = new Player();
 		add(animal);
 		
 		

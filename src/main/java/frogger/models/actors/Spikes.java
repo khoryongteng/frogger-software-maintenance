@@ -19,7 +19,7 @@ public class Spikes extends Obstacle implements IObstacle{
 	
 	private boolean isIntersectAnimal() {
 		
-		if(getIntersectingObjects(Animal.class).size() >= 1) {
+		if(getIntersectingObjects(Player.class).size() >= 1) {
 			
 			return true;
 			

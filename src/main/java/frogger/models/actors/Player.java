@@ -9,7 +9,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
 
-public class Animal extends Actor {
+public class Player extends Actor {
 	private Image imgW1 = new Image("file:src/main/resources/images/froggerUp.png", 40, 40, true, true);
 	private Image imgA1 = new Image("file:src/main/resources/images/froggerLeft.png", 40, 40, true, true);
 	private Image imgS1 = new Image("file:src/main/resources/images/froggerDown.png", 40, 40, true, true);
@@ -38,7 +38,7 @@ public class Animal extends Actor {
 	private int deathFrame = 0;
 	private double currentDistance = 800;
 	
-	public Animal() {
+	public Player() {
 		
 		setX(300);
 		setY(706);
