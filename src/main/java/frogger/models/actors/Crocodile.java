@@ -2,7 +2,7 @@ package frogger.models.actors;
 
 import javafx.scene.image.Image;
 
-public class Crocodile extends Rideable {
+public class Crocodile extends Rideable implements IRideable{
 
 	private Image crocodileRight = new Image("file:src/main/resources/images/crocodileRight.png", 160, 160, true, true);
 	private Image crocodileLeft = new Image("file:src/main/resources/images/crocodileLeft.png", 160, 160, true, true);

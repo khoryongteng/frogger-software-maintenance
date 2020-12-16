@@ -2,7 +2,7 @@ package frogger.models.actors;
 
 import javafx.scene.image.Image;
 
-public class Car extends Obstacle {
+public class Car extends Obstacle implements IObstacle{
 
 	private Image carLeft = new Image("file:src/main/resources/images/car1Left.png", 50, 50, true, true);
 	private Image carRight = new Image("file:src/main/resources/images/car1Right.png", 50, 50, true, true);

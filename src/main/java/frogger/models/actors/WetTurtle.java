@@ -2,7 +2,7 @@ package frogger.models.actors;
 
 import javafx.scene.image.Image;
 
-public class WetTurtle extends Rideable {
+public class WetTurtle extends Rideable implements ISinkable{
 	private Image turtleframe1 = new Image("file:src/main/resources/images/TurtleAnimation1.png", 130, 130, true, true);
 	private Image turtleframe2 = new Image("file:src/main/resources/images/TurtleAnimation2Wet.png", 130, 130, true, true);
 	private Image turtleframe3 = new Image("file:src/main/resources/images/TurtleAnimation3Wet.png", 130, 130, true, true);
@@ -70,7 +70,7 @@ public class WetTurtle extends Rideable {
 	}
 	
 	//Return if turtle is sunk
-	protected boolean isSunk() {
+	public boolean isSunk() {
 		return sunk;
 	}
 	

@@ -2,7 +2,7 @@ package frogger.models.actors;
 
 import javafx.scene.image.Image;
 
-public class Spikes extends Obstacle {
+public class Spikes extends Obstacle implements IObstacle{
 
 	private Image spike1 = new Image("file:src/main/resources/images/spike1.png", 50, 50, true, true);
 	private Image spike2 = new Image("file:src/main/resources/images/spike2.png", 50, 50, true, true);

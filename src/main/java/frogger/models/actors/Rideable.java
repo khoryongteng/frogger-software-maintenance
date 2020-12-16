@@ -22,7 +22,7 @@ public abstract class Rideable extends Actor {
 		
 	}
 		
-	protected double getSpeed() {
+	public double getSpeed() {
 			
 		return speed;
 			

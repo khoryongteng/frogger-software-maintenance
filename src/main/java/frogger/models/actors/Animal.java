@@ -225,7 +225,7 @@ public class Animal extends Actor {
 			}
 			else {
 				
-				getIntersectingObjects(End.class).get(0).setEnd();
+				getIntersectingObjects(End.class).get(0).activate();
 				currentDistance = 800;
 				
 			}

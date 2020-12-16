@@ -2,7 +2,7 @@ package frogger.models.actors;
 
 import javafx.scene.image.Image;
 
-public class Digit extends Actor{
+public class Digit extends Actor {
 
 	private Image[] number = new Image[10];
 	

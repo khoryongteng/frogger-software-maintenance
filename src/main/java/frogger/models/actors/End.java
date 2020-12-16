@@ -2,7 +2,7 @@ package frogger.models.actors;
 
 import javafx.scene.image.Image;
 
-public class End extends Actor{
+public class End extends Actor implements IActivatable{
 	private boolean activated = false;
 	private Image end = new Image("file:src/main/resources/images/End.png", 49, 49, true, true);
 	private Image frogEnd = new Image("file:src/main/resources/images/FrogEnd.png", 49, 49, true, true);
@@ -19,13 +19,13 @@ public class End extends Actor{
 	}
 	
 	//set activated to true when frog reached end, change to corresponding image
-	protected void setEnd() {
+	public void activate() {
 		setImage(frogEnd);
 		activated = true;
 	}
 	
 	//Return if frog reached and activated End
-	protected boolean isActivated() {
+	public boolean isActivated() {
 		return activated;
 	}
 	

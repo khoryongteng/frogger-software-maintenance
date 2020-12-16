@@ -2,7 +2,7 @@ package frogger.models.actors;
 
 import javafx.scene.image.Image;
 
-public class ShortLog extends Rideable {
+public class ShortLog extends Rideable implements IRideable{
 	
 	//Constructor
 	public ShortLog(int x, int y, double speed) {
