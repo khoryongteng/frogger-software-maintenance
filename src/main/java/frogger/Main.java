@@ -40,13 +40,17 @@ public class Main extends Application {
 		//Setup Scene Controllers
 		StartSceneController startSceneController = new StartSceneController();
 		InfoSceneController infoSceneController = new InfoSceneController();
-		EndSceneController endSceneController = new EndSceneController(highScores);
-		HSSceneController hsSceneController= new HSSceneController(highScores);
+		EndSceneController endSceneController = new EndSceneController();
+		HSSceneController hsSceneController= new HSSceneController();
 		SceneController sceneController = new SceneController(scene);
 		GameController gameController = GameController.GameController();
 		
 		//Link Scene Controllers to GameController
 		gameController.setSceneControllers(scene, sceneController, endSceneController, hsSceneController);
+		
+		//Add highScores into endSceneController and hsSceneController
+		endSceneController.setHighScores(highScores);
+		hsSceneController.setHighScores(highScores);
 		
 		//Setup Views
 		FXMLLoader startSceneLoader = new FXMLLoader(getClass().getResource("/views/StartScene.fxml"));

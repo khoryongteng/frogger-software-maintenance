@@ -37,10 +37,15 @@ public class HSSceneController implements Initializable{
 	private Text[] scoreText;
 	private Text[] nameText;
 	
-	public HSSceneController(HighScores highScores) throws IOException {
+	public HSSceneController() throws IOException {
+		
+		this.gameController = GameController.GameController();
+		
+	}
+	
+	public void setHighScores(HighScores highScores) {
 		
 		this.highScores = highScores;
-		this.gameController = GameController.GameController();
 		
 	}
 	

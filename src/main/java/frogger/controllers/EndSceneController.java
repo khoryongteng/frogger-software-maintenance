@@ -28,10 +28,15 @@ public class EndSceneController implements Initializable {
 	@FXML 
 	private TextField username;
 	
-	public EndSceneController(HighScores highScores) throws IOException {
+	public EndSceneController() throws IOException {
+		
+		this.gameController = GameController.GameController();
+		
+	}
+	
+	public void setHighScores(HighScores highScores) {
 		
 		this.highScores = highScores;
-		this.gameController = GameController.GameController();
 		
 	}
 	
