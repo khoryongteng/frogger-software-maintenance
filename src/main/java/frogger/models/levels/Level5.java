@@ -24,12 +24,12 @@ public class Level5 extends Level {
 		
 		add(new Crocodile(440, 376, -2));
 		
-		add(new Spikes(60, 433));
-		add(new Spikes(110, 433));
-		add(new Spikes(160, 433));
-		add(new Spikes(395, 433));
-		add(new Spikes(445, 433));
-		add(new Spikes(495, 433));
+		add(new Spikes(60, 427));
+		add(new Spikes(110, 427));
+		add(new Spikes(160, 427));
+		add(new Spikes(395, 427));
+		add(new Spikes(445, 427));
+		add(new Spikes(495, 427));
 		
 		add(new Car(0, 490, 0.75));
 		add(new Car(200, 490, 0.75));
