@@ -1,6 +1,8 @@
 package frogger.models.levels;
 
-import frogger.models.actors.*;
+import frogger.models.actors.BackgroundImage;
+import frogger.models.actors.End;
+import frogger.models.actors.Player;
 
 public abstract class Level extends World {
 	
@@ -46,7 +48,7 @@ public abstract class Level extends World {
 		
 	}
 	
-	public void setPlayertoFront() {
+	protected void setPlayertoFront() {
 		
 		player.toFront();
 		

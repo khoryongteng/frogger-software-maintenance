@@ -12,12 +12,11 @@ import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 
 
 public abstract class World extends Pane {
+	
     private AnimationTimer timer;
     
     public World() {
@@ -66,6 +65,7 @@ public abstract class World extends Pane {
     }
 
     public void createTimer() {
+    	
         timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
@@ -98,6 +98,7 @@ public abstract class World extends Pane {
     }
 
     public <A extends Actor> List<A> getObjects(Class<A> cls) {
+    	
         ArrayList<A> someArray = new ArrayList<A>();
         for (Node n: getChildren()) {
             if (cls.isInstance(n)) {
@@ -108,8 +109,6 @@ public abstract class World extends Pane {
     }
 
     public void act(long now) {
-    	
-    	
     
     }
     

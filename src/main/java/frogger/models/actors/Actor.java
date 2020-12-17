@@ -1,12 +1,10 @@
 package frogger.models.actors;
 
 import javafx.scene.image.ImageView;
-import javafx.scene.input.InputEvent;
 
 import java.util.ArrayList;
 
 import frogger.models.levels.World;
-
 
 public abstract class Actor extends ImageView{
 
@@ -29,6 +27,8 @@ public abstract class Actor extends ImageView{
         return (World) getParent();
     }
     
-    public abstract void act(long now);
+    public void act(long now) {
+    	
+    }
 
 }

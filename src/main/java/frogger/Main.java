@@ -18,7 +18,6 @@ import frogger.models.HighScores;
 import frogger.models.levels.Level;
 import frogger.models.levels.LevelFactory;
 
-
 public class Main extends Application {
 	
 	public static void main(String[] args) {
@@ -93,8 +92,6 @@ public class Main extends Application {
 	    primaryStage.show();
 	    gameController.playMusic();
 		
-		
 	}
-	
 	
 }

@@ -3,6 +3,7 @@ package frogger.models.actors;
 import javafx.scene.image.Image;
 
 public class WetTurtle extends Rideable implements ISinkable{
+	
 	private Image turtleframe1 = new Image("file:src/main/resources/images/TurtleAnimation1.png", 130, 130, true, true);
 	private Image turtleframe2 = new Image("file:src/main/resources/images/TurtleAnimation2Wet.png", 130, 130, true, true);
 	private Image turtleframe3 = new Image("file:src/main/resources/images/TurtleAnimation3Wet.png", 130, 130, true, true);
@@ -53,6 +54,7 @@ public class WetTurtle extends Rideable implements ISinkable{
 	
 	
 	//Keep turtle within game window borders
+	@Override
 	protected void KeepWithinWindow(double speed) {
 		
 		if (getX() > 600 && speed>0) {
@@ -70,6 +72,7 @@ public class WetTurtle extends Rideable implements ISinkable{
 	}
 	
 	//Return if turtle is sunk
+	@Override
 	public boolean isSunk() {
 		return sunk;
 	}

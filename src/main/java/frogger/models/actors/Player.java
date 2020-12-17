@@ -1,15 +1,11 @@
 package frogger.models.actors;
 
-import java.util.ArrayList;
-
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
-
 public class Player extends Actor {
+	
 	private Image imgW1 = new Image("file:src/main/resources/images/froggerUp.png", 40, 40, true, true);
 	private Image imgA1 = new Image("file:src/main/resources/images/froggerLeft.png", 40, 40, true, true);
 	private Image imgS1 = new Image("file:src/main/resources/images/froggerDown.png", 40, 40, true, true);
@@ -60,6 +56,7 @@ public class Player extends Actor {
 		});
 			
 		setOnKeyReleased(new EventHandler<KeyEvent>() {
+			
 			public void handle(KeyEvent event) {
 					
 				playerControls(event);
@@ -81,6 +78,7 @@ public class Player extends Actor {
 			switch (event.getCode()) {
 			
 				case W: 
+					
 					move(0, -movement);
 	                playerAnimation(second, 'W');
 	                if (second) {
@@ -102,16 +100,19 @@ public class Player extends Actor {
 	                break;
 	                
 				case A:
+					
 					move(-movementX, 0);
 					playerAnimation(second, 'A');
 	            	break;
 	            	
 				case S:
+					
 					move(0, movement);
 					playerAnimation(second, 'S');
 	            	break;
 	            	
 				case D:
+					
 					move(movementX, 0);
 					playerAnimation(second, 'D');
 	            	break;
@@ -197,7 +198,9 @@ public class Player extends Actor {
 	private void objectInteraction(long now) {
 		
 		if (getIntersectingObjects(Obstacle.class).size() >= 1) {
+			
 			carDeath = true;
+			
 		}
 		if (getIntersectingObjects(WetTurtle.class).size() >= 1) {
 			
@@ -320,12 +323,16 @@ public class Player extends Actor {
 	
 	//Determine if game end conditions are met
 	public boolean getStop() {
+		
 		return end==5;
+		
 	}
 	
 	//Return points acquired by player
 	public int getPoints() {
+		
 		return points;
+		
 	}
 	
 	//Return true if score displayed should be changed
@@ -338,6 +345,5 @@ public class Player extends Actor {
 		return false;
 		
 	}
-	
 
 }

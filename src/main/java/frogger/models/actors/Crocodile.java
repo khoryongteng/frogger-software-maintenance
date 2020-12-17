@@ -16,9 +16,7 @@ public class Crocodile extends Rideable implements IRideable{
 
 	@Override
 	protected void KeepWithinWindow(double speed) {
-		
-		
-				
+	
 	}
 	
 	private void movement(double speed) {
@@ -51,6 +49,7 @@ public class Crocodile extends Rideable implements IRideable{
 		
 	}
 	
+	@Override
 	public void act(long now) {
 		
 		move(speed , 0);

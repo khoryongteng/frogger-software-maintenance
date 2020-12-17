@@ -3,6 +3,7 @@ package frogger.models.actors;
 import javafx.scene.image.Image;
 
 public class End extends Actor implements IActivatable{
+	
 	private boolean activated = false;
 	private Image end = new Image("file:src/main/resources/images/End.png", 49, 49, true, true);
 	private Image frogEnd = new Image("file:src/main/resources/images/FrogEnd.png", 49, 49, true, true);
@@ -11,11 +12,6 @@ public class End extends Actor implements IActivatable{
 		setImage(end);
 		setX(x);
 		setY(y);
-	}
-	
-	@Override
-	public void act(long now) {
-		// TODO Auto-generated method stub
 	}
 	
 	//set activated to true when frog reached end, change to corresponding image
@@ -28,6 +24,5 @@ public class End extends Actor implements IActivatable{
 	public boolean isActivated() {
 		return activated;
 	}
-	
 
 }

@@ -31,11 +31,5 @@ public class Digit extends Actor {
 		setImage(number[n]);
 		
 	}
-	
-	@Override
-	public void act(long now) {
-		// TODO Auto-generated method stub
-		
-	}
-	
+
 }
