@@ -5,10 +5,17 @@ import java.io.File;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
+/**
+ *	<p>The class MusicPlayer is used to play music in scene.</p>
+ */
 public class MusicPlayer{
 
 	private MediaPlayer mediaPlayer;
 	
+	/**
+	 * <p>The constructor of MusicPlayer.</p>
+	 * <p>Music file to be played is set.</p>
+	 */
 	public MusicPlayer(){
 		
 		String musicFile = "src/main/resources/audio/Frogger Main Song Theme (loop).mp3";   
@@ -18,11 +25,16 @@ public class MusicPlayer{
 		
 	}
 	
+	/**
+	 * <p>Play Music.</p>
+	 */
 	public void play() {
-		
 	    mediaPlayer.play();
 	}
 	
+	/**
+	 * <p>Stop Music.</p>
+	 */
 	public void stop() {
 		mediaPlayer.stop();
 	}

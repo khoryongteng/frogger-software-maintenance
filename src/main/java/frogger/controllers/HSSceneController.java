@@ -11,6 +11,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
+/**
+ * 	<p>The class HSSceneController is the controller for the HighScoreScene FXML view.</p>
+ * 	<p>Methods from this class are used to pass and display values in the view and to perform actions when view is interfaced by the user.</p>
+ */
 public class HSSceneController implements Initializable{
 	
 	private HighScores highScores;
@@ -33,18 +37,30 @@ public class HSSceneController implements Initializable{
 	private Text[] scoreText;
 	private Text[] nameText;
 	
+	/**
+	 * <p>The constructor of HSSceneController.</p>
+	 * <p>Instance of {@link frogger.controllers.GameController} initialized through Singleton.</p>
+	 */
 	public HSSceneController() throws IOException {
 		
 		this.gameController = GameController.GameController();
 		
 	}
 	
+	/**
+	 * <p>Set instance of {@link frogger.models.HighScores} that will be called by the HSSceneController.</p>
+	 * @param highScores the instance of {@link frogger.models.HighScores}.
+	 */
 	public void setHighScores(HighScores highScores) {
 		
 		this.highScores = highScores;
 		
 	}
 	
+	/**
+	 * <p>Method called automatically after FXML annotated fields are populated to initialize values to be displayed in HighScoreScene FXML View.</p>
+	 * <p>Implemented from {@link javafx.fxml.Initializable} interface.</p>
+	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
@@ -76,6 +92,9 @@ public class HSSceneController implements Initializable{
 		
 	}
 
+	/**
+	 * <p>Set High Scores to be displayed in HighScoreScene FXML View.</p>
+	 */
 	protected void setScoreText() {
 		
 		String[] hsStringList = highScores.getScoreList();

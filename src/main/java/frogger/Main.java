@@ -18,12 +18,22 @@ import frogger.models.HighScores;
 import frogger.models.levels.Level;
 import frogger.models.levels.LevelFactory;
 
+/**
+ *	<p>The Main class launches the Frogger game application.</p>
+ *	<p>Methods in the Main Class are used to initialize the Frogger Game with all objects needed to start the game.</p>
+ */
 public class Main extends Application {
 	
+	/**
+	 * <p>Method that launches the application</p>
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}
 
+	/**
+	 * <p>All objects needed to start the Frogger game generated in this method.</p>
+	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		

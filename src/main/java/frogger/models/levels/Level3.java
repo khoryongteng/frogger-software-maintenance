@@ -2,8 +2,16 @@ package frogger.models.levels;
 
 import frogger.models.actors.*;
 
+/**
+ * <p>The class Level3 is a level that is played by the user in the Frogger Game.</p>
+ * <p>Level3 can be customized through adding different {@link frogger.models.actors.Actor}s in its constructor.</p>
+ */
 public class Level3 extends Level {
 	
+	/**
+	 * <p>The constructor of Level3</p>
+	 * <p>{@link frogger.models.actors.Actor}s added in the constructor to customize the level.</p>
+	 */
 	public Level3() {
 		
 		add(new Digit(3, 30, 155, 17));

@@ -2,6 +2,10 @@ package frogger.models.actors;
 
 import javafx.scene.image.Image;
 
+/**
+ * <p>The class WetTurtle is a {@link frogger.models.actors.Rideable} that can be ridden by {@link frogger.models.actors.Player} when intersected.</p>
+ * <p>WetTurtles are added into {@link frogger.models.levels.Level} classes using {@link frogger.models.levels.Level#add(Actor)} to create a visible instance of a WetTurtle in the level.</p>
+ */
 public class WetTurtle extends Rideable implements ISinkable{
 	
 	private Image turtleframe1 = new Image("file:src/main/resources/images/TurtleAnimation1.png", 130, 130, true, true);
@@ -11,7 +15,13 @@ public class WetTurtle extends Rideable implements ISinkable{
 	private double speed;
 	private boolean sunk = false;
 	
-	//Constructor
+	/**
+	 * <p>The constructor of WetTurtle.</p>
+	 * <p>The initial image of WetTurtle is set here.</p>
+	 * @param x the initial position of WetTurtle on the x-axis.
+	 * @param y the initial position of WetTurtle on the y-axis.
+	 * @param speed the speed that the WetTurtle will move at.
+	 */
 	public WetTurtle(int x, int y, double speed) {
 		
 		super(x, y, speed);
@@ -20,7 +30,6 @@ public class WetTurtle extends Rideable implements ISinkable{
 		
 	}
 	
-	//TurtleAnimation by set image
 	private void TurtleState(long now) {
 				
 		if (now/900000000  % 4 ==0) {
@@ -42,7 +51,12 @@ public class WetTurtle extends Rideable implements ISinkable{
 				
 	}
 	
-	//Action when method called
+	/**
+     * <p>Method called by AnimationTimer in {@link frogger.models.levels.World#createTimer()} to cause WetTurtle to act every game frame.</p>
+     * <p>Moves the WetTurtle based on speed every frame and ensures the WetTurtle objects will be in game bounds. WetTurtle animation is also animated here.</p>
+     * <p>WetTurtle state of whether it is sunk is also set here.</p>
+     * @param now The timestamp of the current frame given in nanoseconds.
+     */
 	@Override
 	public void act(long now) {
 
@@ -52,8 +66,6 @@ public class WetTurtle extends Rideable implements ISinkable{
 		
 	}
 	
-	
-	//Keep turtle within game window borders
 	@Override
 	protected void KeepWithinWindow(double speed) {
 		
@@ -71,7 +83,10 @@ public class WetTurtle extends Rideable implements ISinkable{
 
 	}
 	
-	//Return if turtle is sunk
+	/**
+	 * <p>Get whether the WetTurtle is sunk and cannot be ridden on by {@link frogger.models.actors.Player}.</p>
+	 * @return the boolean whether the WetTurtle is sunk and cannot be ridden on.
+	 */
 	@Override
 	public boolean isSunk() {
 		return sunk;

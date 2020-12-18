@@ -8,6 +8,14 @@ import frogger.models.levels.Level;
 import javafx.animation.AnimationTimer;
 import javafx.scene.Scene;
 
+/**
+ *	<p>The class GameController manages the core flow of the Frogger game.</p>
+ * 	<p>Methods in GameController called to pass values, save values, call methods as a mediator between {@link frogger.controllers.SceneController}, {@link frogger.controllers.StartSceneController}, {@link frogger.controllers.InfoSceneController}, {@link frogger.controllers.EndSceneController}, {@link frogger.controllers.HSSceneController}.</p>	
+ * 	<p>GameController used to detect {@link frogger.models.levels.Level} child class completions to facilitate automatic level swap through calling {@link frogger.controllers.SceneController#changeScene(Integer)}.</p>
+ * 	<p>Core controller for Frogger game MVC design pattern and Mediator between {@link frogger.controllers.SceneController}, {@link frogger.controllers.StartSceneController}, {@link frogger.controllers.InfoSceneController}, {@link frogger.controllers.EndSceneController}, {@link frogger.controllers.HSSceneController} in Mediator design pattern.</p>
+ * 	<p>Initialized as a Singleton to avoid multiple instances as it may cause errors.</p>
+ */
+
 public class GameController {
 
 	private static GameController gameController_instance = null;
@@ -28,6 +36,11 @@ public class GameController {
 		
 	}
 	
+	
+	/**
+	 *	<p>The Singleton constructor method of GameController. </p>
+	 *	<p>Get GameController instance using GameController.GameController()</p>
+	 */
 	public static GameController GameController() throws IOException {
 		
 		if (gameController_instance == null) {
@@ -40,6 +53,14 @@ public class GameController {
 		
 	}
 	
+	
+	/**
+	 *	<p>Set the Scene, SceneController objects that will be called and used by GameController.</p>
+	 *	@param scene the instance of Scene used for display.
+	 *	@param sceneController the instance of {@link frogger.controllers.SceneController} to be called when switching scenes.
+	 *	@param endSceneController the instance of {@link frogger.controllers.EndSceneController} to be called to generate EndScene when all {@link frogger.models.levels.Level} are completed.
+	 *	@param hsSceneController the instance of {@link frogger.controllers.HSSceneController} to be called to generate HighScoreScene.
+	 */
 	public void setSceneControllers(Scene scene, SceneController sceneController, EndSceneController endSceneController, HSSceneController hsSceneController) {
 		
 		this.scene = scene;
@@ -49,6 +70,9 @@ public class GameController {
 		
 	}
 	
+	/**
+	 * 	<p>Plays music in Scene using {@link frogger.models.MusicPlayer}.</p>
+	 */
 	public void playMusic() {
     	
     	musicPlayer.play();
@@ -72,18 +96,27 @@ public class GameController {
 		
 	}
 	
+	/**
+	 * <p>Switches scene to next scene saved in {@link frogger.controllers.SceneController} and keeps track of which scene is currently being displayed.</p>
+	 */
 	protected void nextScene() {
 		
 		sceneController.changeScene(++currentScene);
 		
 	}
 	
+	/**
+	 * <p>Switches scene to previous scene saved in {@link frogger.controllers.SceneController} and keeps track of which scene is currently being displayed.</p>
+	 */
 	protected void previousScene() {
 		
 		sceneController.changeScene(--currentScene);
 		
 	}
 	
+	/**
+	 *	<p>Sets high Scores to be displayed in HighScoreScene using {@link frogger.controllers.HSSceneController}.</p>
+	 */
 	protected void setHSList() {
 		
 		hsSceneController.setScoreText();
@@ -124,13 +157,27 @@ public class GameController {
 		
     }
 	
+	/**
+	 * <p>Starts the game on first {@link frogger.models.levels.Level} saved in {@link frogger.controllers.SceneController}.</p>
+	 */
 	protected void start() {
 	
-		currentScene = 2;
-		sceneController.activate(currentScene);
-    	createTimer();
-        timer.start();
-        
+		currentScene = sceneController.getFirstLevel();
+		
+		if (currentScene == -1) {
+			
+			System.out.println("No Levels were set!");
+			currentScene = 0;
+			
+		}
+		else {
+			
+			sceneController.activate(currentScene);
+	    	createTimer();
+	        timer.start();
+			
+		}
+
     }
 
     private void stop() {
@@ -140,6 +187,9 @@ public class GameController {
         
     }
     
+    /**
+     * <p>Restarts the game by reseting game score and {@link frogger.models.levels.Level} saved in {@link frogger.controllers.SceneController}.</p>
+     */
     protected void restart() throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
     	
     	savedScore = 0;

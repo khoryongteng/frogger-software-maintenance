@@ -4,6 +4,13 @@ import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 
+/**
+ * <p>The class Player is an {@link frogger.models.actors.Actor} representing the player in the Frogger game.</p>
+ * <p>The class Player is added into {@link frogger.models.levels.Level} classes using {@link frogger.models.levels.Level#add(Actor)} to create a visible instance of a Player in the level.</p>
+ * <p>Player movement is handled by Player Class and translated into actual Player movement in the {@link frogger.models.levels.Level} classes.</p>
+ * <p>Player animation is handled within Player Class.</p>
+ * <p>Player class keeps track of points accumulated, point change compared to previous game state, and level end conditions. These values are passed to {@link frogger.models.levels.Level} classes when request methods are called.</p>
+ */
 public class Player extends Actor {
 	
 	private Image imgW1 = new Image("file:src/main/resources/images/froggerUp.png", 40, 40, true, true);
@@ -34,6 +41,11 @@ public class Player extends Actor {
 	private int deathFrame = 0;
 	private double currentDistance = 800;
 	
+	/**
+	 * <p>The constructor of Player.</p>
+	 * <p>Initial positioning in a {@link frogger.models.levels.Level} and initial image set here.</p>
+	 * <p>Key listener called here to handle user input for Player controls.</p>
+	 */
 	public Player() {
 		
 		setX(300);
@@ -43,7 +55,7 @@ public class Player extends Actor {
 		
 	}
 	
-	 private void setKeyListener() {
+	private void setKeyListener() {
 			
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 				
@@ -67,7 +79,6 @@ public class Player extends Actor {
 			
 	}
 	
-	//Player Controls
 	private void playerControls(KeyEvent event) {
 		
 		if (noMove) {
@@ -122,8 +133,7 @@ public class Player extends Actor {
 		}
 		
 	}
-	
-	//Animation
+
 	private void playerAnimation(boolean second, char key){
 		
 		if (second) {
@@ -171,12 +181,16 @@ public class Player extends Actor {
 		
 	}
 	
-	//Method called every tick when AnimationTimer is running
+	/**
+	 * <p>Method called to check if Player is within game bounds, if Player has any interactions during gameplay, and process such interactions when detected.</p>
+     * <p>Method called by AnimationTimer in {@link frogger.models.levels.World#createTimer()} to cause Player to act every game frame.</p>
+     * @param now The timestamp of the current frame given in nanoseconds.
+     */
 	@Override
 	public void act(long now) {
 
 		KeepWithinWindow();
-		objectInteraction(now);
+		playerInteraction(now);
 		deathProcess(now);
 		
 	}
@@ -195,7 +209,7 @@ public class Player extends Actor {
 		
 	}
 	
-	private void objectInteraction(long now) {
+	private void playerInteraction(long now) {
 		
 		if (getIntersectingObjects(Obstacle.class).size() >= 1) {
 			
@@ -321,21 +335,30 @@ public class Player extends Actor {
 
 	}
 	
-	//Determine if game end conditions are met
+	/**
+	 * <p>Get whether level end conditions are met.</p>
+	 * @return boolean whether level end conditions are met.
+	 */
 	public boolean getStop() {
 		
 		return end==5;
 		
 	}
 	
-	//Return points acquired by player
+	/**
+	 * <p>Get points acquired by the Player.</p>
+	 * @return int of points acquired by the Player.
+	 */
 	public int getPoints() {
 		
 		return points;
 		
 	}
 	
-	//Return true if score displayed should be changed
+	/**
+	 * <p>Get whether score change conditions are met.</p>
+	 * @return boolean whether score change conditions are met.
+	 */
 	public boolean changeScore() {
 		
 		if (changeScore) {

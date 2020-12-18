@@ -2,11 +2,21 @@ package frogger.models.actors;
 
 import javafx.scene.image.Image;
 
+/**
+ * <p>The class Digit is a changeable {@link frogger.models.actors.Actor} that shows a number between 0-9.</p>
+ * <p>Digit is added into {@link frogger.models.levels.Level} classes using {@link frogger.models.levels.Level#add(Actor)} to create a visible instance of a Digit in the level.</p>
+ */
 public class Digit extends Actor {
 
 	private Image[] number = new Image[10];
 	
-	//constructor
+	/**
+	 * <p>The constructor of Digit.</p>
+	 * @param n the number to be displayed, between 0-9.
+	 * @param dimensions the size of Digit to be displayed.
+	 * @param x the position of Digit on the x-axis.
+	 * @param y the position of DIgit on the y-axis.
+	 */
 	public Digit(int n, int dimensions, int x, int y) {
 		
 		number[0] = new Image("file:src/main/resources/images/0.png", dimensions, dimensions, true, true);
@@ -26,6 +36,10 @@ public class Digit extends Actor {
 		
 	}
 	
+	/**
+	 * <p>Set the Digit to display between the numbers 0-9</p>
+	 * @param n The number to be displayed.
+	 */
 	public void setDigit(int n) {
 		
 		setImage(number[n]);

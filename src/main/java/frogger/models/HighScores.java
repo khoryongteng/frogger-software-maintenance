@@ -7,6 +7,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
+/**
+ *	<p>The class HighScores manages the addition of new High Scores, reading and writing of the High Score file.</p>
+ */
 public class HighScores{
 
 	private String root = System.getProperty("user.dir");
@@ -14,6 +17,11 @@ public class HighScores{
 	private int maxScores = 10;
 	private ArrayList<HighScore> scoreList;
 	
+	/**
+	 * <p>The constructor of HighScores.</p>
+	 * <p>Scores saved in High Score file read and stored into ArrayList.</p>
+	 * <p>New High Score file created if there is no existing High Score file.</p>
+	 */
 	public HighScores() {
 		
 		String line;
@@ -46,6 +54,10 @@ public class HighScores{
 		
 	}
 	
+	/**
+	 * <p>Gets list of High Scores in a string array.</p>
+	 * @return String Array of High Scores included with name and score.
+	 */
 	public String[] getScoreList() {
 		
 		String[] list = new String[scoreList.size()];
@@ -60,6 +72,12 @@ public class HighScores{
 		
 	}
 	
+	/**
+	 * <p>Inserts new score</p>
+	 * <p>Score inserted into arraylist then sorted based on score. If name inserted is empty, score is not inserted.</p>
+	 * @param name the name of player.
+	 * @param score the score achieved by the player.
+	 */
 	public void newScore(String name, int score) throws IOException {
 		
 		if (this.isNewHighScore(score)) {
@@ -68,7 +86,7 @@ public class HighScores{
 			
 			if (!name.isEmpty()) {
 				
-				this.add(name, score);
+				add(name, score);
 				writeScoreFile();
 				
 			}

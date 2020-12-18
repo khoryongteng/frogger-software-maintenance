@@ -2,6 +2,10 @@ package frogger.models.actors;
 
 import javafx.scene.image.Image;
 
+/**
+ * <p>The class Spikes is an {@link frogger.models.actors.Obstacle} that kills the {@link frogger.models.actors.Player} when intersected.</p>
+ * <p>Spikes are added into {@link frogger.models.levels.Level} classes using {@link frogger.models.levels.Level#add(Actor)} to create a visible instance of a Spikes in the level.</p>
+ */
 public class Spikes extends Obstacle implements IObstacle{
 
 	private Image spike1 = new Image("file:src/main/resources/images/spike1.png", 50, 50, true, true);
@@ -10,6 +14,12 @@ public class Spikes extends Obstacle implements IObstacle{
 	private boolean spikeup = false;
 	private long spikeuptime;
 	
+	/**
+	 * <p>The constructor of Spikes.</p>
+	 * <p>The initial image spike is set here.</p>
+	 * @param x the position of Spikes on the x-axis.
+	 * @param y the position of Spikes on the y-axis.
+	 */
 	public Spikes(int x, int y) {
 		
 		super(x, y, 0);
@@ -17,7 +27,7 @@ public class Spikes extends Obstacle implements IObstacle{
 		
 	}
 	
-	private boolean isIntersectAnimal() {
+	private boolean isIntersectPlayer() {
 		
 		if(getIntersectingObjects(Player.class).size() >= 1) {
 			
@@ -62,10 +72,15 @@ public class Spikes extends Obstacle implements IObstacle{
 		
 	}
 	
+	/**
+     * <p>Method called by AnimationTimer in {@link frogger.models.levels.World#createTimer()} to cause Spikes to act every game frame.</p>
+     * <p>Spike detects if it is intersected by {@link frogger.models.actors.Player}, and animates spiking upwards if so.</p>
+     * @param now The timestamp of the current frame given in nanoseconds.
+     */
 	@Override
 	public void act(long now) {
 		
-		if (isIntersectAnimal()&&!spikeup) {
+		if (isIntersectPlayer()&&!spikeup) {
 			
 			spikeup = true;	
 			spikeuptime = now;

@@ -21,5 +21,4 @@
   <classpathentry kind="var" path="M2_REPO/org/testfx/testfx-core/4.0.15-alpha/testfx-core-4.0.15-alpha.jar" sourcepath="M2_REPO/org/testfx/testfx-core/4.0.15-alpha/testfx-core-4.0.15-alpha-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/assertj/assertj-core/3.11.1/assertj-core-3.11.1.jar" sourcepath="M2_REPO/org/assertj/assertj-core/3.11.1/assertj-core-3.11.1-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/testfx/testfx-junit/4.0.15-alpha/testfx-junit-4.0.15-alpha.jar" sourcepath="M2_REPO/org/testfx/testfx-junit/4.0.15-alpha/testfx-junit-4.0.15-alpha-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/hamcrest/hamcrest/2.1/hamcrest-2.1.jar" sourcepath="M2_REPO/org/hamcrest/hamcrest/2.1/hamcrest-2.1-sources.jar"/>
 </classpath>
