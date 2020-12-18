@@ -2,6 +2,7 @@ package frogger.controllers;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.net.URISyntaxException;
 
 import frogger.models.MusicPlayer;
 import frogger.models.levels.Level;
@@ -24,7 +25,7 @@ public class GameController {
 	private int currentScene;
 	private int totalScore = 0;
 	private int savedScore = 0;
-	private MusicPlayer musicPlayer = new MusicPlayer();
+	private MusicPlayer musicPlayer;
 	private SceneController sceneController;
 	private EndSceneController endSceneController;
 	private HSSceneController hsSceneController;
@@ -72,9 +73,11 @@ public class GameController {
 	
 	/**
 	 * 	<p>Plays music in Scene using {@link frogger.models.MusicPlayer}.</p>
+	 * @throws URISyntaxException 
 	 */
-	public void playMusic() {
+	public void playMusic() throws URISyntaxException {
     	
+		musicPlayer = new MusicPlayer();
     	musicPlayer.play();
     	
     }

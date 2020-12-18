@@ -1,6 +1,7 @@
 package frogger.controllers;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -91,7 +92,7 @@ public class EndSceneController implements Initializable {
 	}
 	
 	@FXML
-	private void enter() throws IOException {
+	private void enter() throws IOException, URISyntaxException {
 		
 		highScores.newScore(username.getText(), score);
 		gameController.setHSList();

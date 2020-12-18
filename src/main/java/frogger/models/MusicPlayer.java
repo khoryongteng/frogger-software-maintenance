@@ -1,6 +1,8 @@
 package frogger.models;
 
 import java.io.File;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -15,11 +17,11 @@ public class MusicPlayer{
 	/**
 	 * <p>The constructor of MusicPlayer.</p>
 	 * <p>Music file to be played is set.</p>
+	 * @throws URISyntaxException 
 	 */
-	public MusicPlayer(){
+	public MusicPlayer() throws URISyntaxException{
 		
-		String musicFile = "src/main/resources/audio/Frogger Main Song Theme (loop).mp3";   
-		Media sound = new Media(new File(musicFile).toURI().toString());
+		Media sound = new Media(getClass().getResource("/audio/Frogger Main Song Theme (loop).mp3").toURI().toString());
 		mediaPlayer = new MediaPlayer(sound);
 		mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
 		
