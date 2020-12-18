@@ -2,11 +2,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>COMP2042_CW_KhorYongTeng</groupId>
 	<artifactId>COMP2042_CW_KhorYongTeng</artifactId>
-	<version>frogger</version>
+	<version>frogger1.0</version>
+	<packaging>jar</packaging>
   	<properties>
     	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   	</properties>
-  
   
 	<dependencies>
     	<dependency>
@@ -71,6 +71,11 @@
 	          		<reportOutputDirectory>${basedir}</reportOutputDirectory>
 	          		<destDir>javadoc</destDir>
 	        	</configuration>
+	        	<executions>
+			        <execution>
+			            <phase>package</phase>
+			        </execution>
+			    </executions>
 	      	</plugin>
 	      	<plugin>
 		        <groupId>org.codehaus.mojo</groupId>
@@ -87,6 +92,30 @@
 		          <mainClass>frogger.Main</mainClass>
 		        </configuration>
 		      </plugin>
+		      <plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-assembly-plugin</artifactId>
+			    <version>3.3.0</version>
+			    <configuration>
+			    	<archive>
+			    		<manifest>
+			    			<mainClass>frogger.Main</mainClass>
+			            </manifest>
+			      	</archive>
+			     	<descriptorRefs>
+			   			<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+						<outputDirectory>build</outputDirectory>
+				</configuration>
+			    <executions>
+			        <execution>
+			            <phase>package</phase>
+			            <goals>
+			                <goal>single</goal>
+			            </goals>
+			        </execution>
+			    </executions>
+			</plugin>
 	    </plugins>
 	</build>
 </project>
