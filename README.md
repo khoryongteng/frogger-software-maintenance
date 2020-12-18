@@ -13,9 +13,10 @@
 
 1.	Import project to IDE.
 2.	Open console and go to project directory.
-3. 	Run maven command: [mvn clean install package] to install dependencies, launch test, and package project into a jar file with dependencies.
-4. 	Run maven command: mvn exec:java to launch game.
-5. 	Run maven command: mvn javadoc:javadoc to regenerate javadoc.
+3	If using eclipse run maven command: mvn eclipse:eclipse.
+4. 	Run maven command: mvn clean install package to install dependencies, launch test, and package project into a jar file with dependencies.
+5. 	Run maven command: mvn exec:java to launch game.
+6. 	Run maven command: mvn javadoc:javadoc to regenerate javadoc.
 
 # Key Changes
  
