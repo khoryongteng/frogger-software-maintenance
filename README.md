@@ -1,15 +1,15 @@
 # COMP2042_CW_KhorYongTeng
-##Frogger Arcade Game
+## Frogger Arcade Game
 ##### Name : Khor Yong Teng
 ##### Student Id: 20089417
 
-#Prerequisite
+# Prerequisite
 
 1. 	Java is installed.
 2.	Maven is installed.
 3.	Java and Maven added to PATH.
 
-#Installation
+# Installation
 
 1.	Import project to IDE.
 2.	Open console and go to project directory.
@@ -59,7 +59,7 @@
 		- Controllers consists of new controller classes in frogger.controllers.
 	
 	- Singleton pattern
-		- Used for GameController object construction to overcome multiple instance issue when referenced from different controllers.
+		- Used for GameController object construction to overcome multiple instance issue.
 		
 	- Factory pattern
 		- LevelFactory used for construction of level classes to create loose coupling.
@@ -89,3 +89,7 @@
 	- Generate Javadoc.
 	- Execute game.
 	
+# Notes
+1.	Jar build file with dependency stored in [/build](/build).
+2.	Javadoc generated in [/javadoc](/javadoc).
+3. 	Class Diagram stored in [/classdiagram](/classdiagram).
