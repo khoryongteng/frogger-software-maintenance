@@ -10,8 +10,10 @@ import frogger.models.actors.Player;
  */
 public abstract class Level extends World {
 	
+	private BackgroundImage backgroundImage;
 	private Scoreboard scoreboard;
 	private Player player;
+	private End[] end = new End[5];
 	
 	/**
      * <p>The constructor of Level abstract class.</p>
@@ -19,13 +21,23 @@ public abstract class Level extends World {
      */
 	public Level() {
 		
-		add(new BackgroundImage());
+		backgroundImage = new BackgroundImage();
+		add(backgroundImage);
+		
 		scoreboard = new Scoreboard(this);
-		add(new End(19, 95));
-		add(new End(148, 95));
-		add(new End(277, 95));
-		add(new End(405, 95));
-		add(new End(534, 95));
+		
+		end[0] = new End(19, 95);
+		end[1] = new End(148, 95);
+		end[2] = new End(277, 95);
+		end[3] = new End(405, 95);
+		end[4] = new End(534, 95);
+		
+		for(int i = 0;i < end.length; i++) {
+			
+			add(end[i]);
+			
+		}
+		
 		player = new Player();
 		add(player);
 		
