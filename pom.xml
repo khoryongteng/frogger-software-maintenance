@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>COMP2042_CW_KhorYongTeng</groupId>
 	<artifactId>COMP2042_CW_KhorYongTeng</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>frogger</version>
   	<properties>
     	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   	</properties>

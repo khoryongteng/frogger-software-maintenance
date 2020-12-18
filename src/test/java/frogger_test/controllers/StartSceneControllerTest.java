@@ -15,6 +15,7 @@ import frogger.controllers.GameController;
 import frogger.controllers.HSSceneController;
 import frogger.controllers.SceneController;
 import frogger.controllers.StartSceneController;
+import frogger.models.levels.Level1;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -27,11 +28,12 @@ public class StartSceneControllerTest extends ApplicationTest{
 		private Scene scene;
 		private FxRobot robot = new FxRobot();
 		private Pane infoTestPane = new Pane();
-		private Pane gameTestPane = new Pane();
+		private Level1 gameTestPane;
 	
 	@Override
 	public void start(Stage stage) throws IOException {
 		
+		gameTestPane = new Level1();
 		StartSceneController startSceneController = new StartSceneController();
 		FXMLLoader startSceneLoader = new FXMLLoader(getClass().getResource("/views/StartScene.fxml"));
 		startSceneLoader.setController(startSceneController);
