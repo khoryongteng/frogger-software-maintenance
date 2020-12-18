@@ -36,6 +36,7 @@
 	- Enforces open/closed principle and simplifies code for maintainability and readability.
 	
 6.	Moved Level creation functionality in main to new dedicated package of classes (frogger.models.levels).
+	- Allows for easy creation and modification of levels.
 	- Enforces Single-Responsibility Principle.
 	- World abstract class used as a base for level creation.
 	- MyStage renamed and reused as Level abstract class which contains common objects across levels.
@@ -74,16 +75,18 @@
 1. 	Added user interfaces in the form of FXML files as views.
 	- FXML view files are views adhering to the MVC pattern format.
 		- Includes StartScene, InfoScene, EndScene, HighScoreScene.
- 
-2. 	Added additional levels to the game.
-	- Levels can be easily added and modified as level generation are standalone classes for each level (Level1 etc.).
-	- Levels can be added by adding it in the LevelFactory getLevels() Method.
-	
-3. 	Added HighScore display functionality through reading writing from a saved file containing High Scores.
- 
-4. 	Added JUnit Tests.
 
-5. 	Added Maven to:
+2.  Added new Actors
+	- Spike Obstacle Class
+	- Crocodile Rideable Class
+
+3. 	Added additional levels to the game.
+	
+4. 	Added HighScore display functionality through reading writing from a saved file containing High Scores.
+ 
+5. 	Added JUnit Tests.
+
+6. 	Added Maven to:
 	- Manage dependencies.
 	- Create .jar build files.
 	- Generate Javadoc.
