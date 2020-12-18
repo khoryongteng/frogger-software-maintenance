@@ -34,13 +34,13 @@
 5.	Broke down Obstacle class into subclasses. Obstacle class changed to abstract class and inherited.
 	- Obstacle instantiates too many objects in levels. 
 	- Broke down into Car, LongTruck, and ShortTruck classes.
-	- Enforces open/closed principle and simplifies code for maintainability and readability.
+	- Enforces open/closed principle and simplifies code.
 	
 6.	Moved Level creation functionality in main to new dedicated package of classes (frogger.models.levels).
 	- Allows for easy creation and modification of levels.
 	- Enforces Single-Responsibility Principle.
 	- World abstract class used as a base for level creation.
-	- MyStage renamed and reused as Level abstract class which contains common objects across levels.
+	- MyStage renamed as Level abstract class which contains common objects and methods across levels.
 	- Concrete class levels (Level1 etc.) used to instantiate game levels.
 	
 7. 	Separated functionality of classes into separate classes.
@@ -70,7 +70,7 @@
 		- GameController acts as mediator between other controllers.
 		- Reduce the need of controllers to know about other controllers other than the GameController.
 
-10. SOLID Principles enforced throughout code refactoring through usage of abstract classes, interfaces, and polymorphism.
+10. SOLID Principles enforced throughout code through usage of abstract classes, interfaces, and polymorphism.
 
 ### Extension
 1. 	Added user interfaces in the form of FXML files as views.
@@ -83,7 +83,7 @@
 
 3. 	Added additional levels to the game.
 	
-4. 	Added HighScore display functionality through reading writing from a saved file containing High Scores.
+4. 	Added High Score display and saving functionality through HighScore Class.
  
 5. 	Added JUnit Tests.
 
