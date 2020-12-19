@@ -67,7 +67,7 @@
 	- Factory pattern
 		- LevelFactory used for construction of level classes to create loose coupling.
 		
-	-Mediator pattern
+	- Mediator pattern
 		- GameController acts as mediator between other controllers.
 		- Reduce the need of controllers to know about other controllers other than the GameController.
 
