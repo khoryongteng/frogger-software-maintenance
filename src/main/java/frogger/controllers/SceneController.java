@@ -14,7 +14,7 @@ import javafx.scene.layout.Pane;
  */
 public class SceneController {
 
-	private HashMap<Integer, Pane> sceneMap = new HashMap<>();;
+	private HashMap<Integer, Pane> sceneMap = new HashMap<>();
     private Scene scene;
 
     /**

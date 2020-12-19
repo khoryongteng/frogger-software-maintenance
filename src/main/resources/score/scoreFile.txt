@@ -1,5 +1,6 @@
 SeaCucumbe	3570
 Teddy	3410
+Jimmy	3210
 Meat	2780
 Duck	2540
 Vegetable	1940
@@ -7,4 +8,3 @@ Sushi	1720
 Milo	1620
 Jacob	1620
 Tofu	1610
-Mushroom	1610
