@@ -3,6 +3,7 @@ package frogger;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -99,6 +100,8 @@ public class Main extends Application {
 		//Stage Setup
 		primaryStage.setScene(scene);
 	    primaryStage.setResizable(false);
+	    primaryStage.setTitle("Frogger Game");
+	    primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/images/FrogEnd.png")));
 	    primaryStage.show();
 	    gameController.playMusic();
 		
