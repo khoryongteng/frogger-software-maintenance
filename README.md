@@ -1,14 +1,14 @@
 # Frogger Software Maintenance
 ## Refactoring of Frogger Arcade Game Implemented in JavaFx
 
-<img src="https://user-images.githubusercontent.com/49972425/172637535-d9ec8351-264f-43de-a6a9-9d3bc4d6faf8.gif" width="500">
+<img src="https://user-images.githubusercontent.com/49972425/172637535-d9ec8351-264f-43de-a6a9-9d3bc4d6faf8.gif" width="600">
 <p>
-	<img src="https://user-images.githubusercontent.com/49972425/172629098-17d7cf6b-d0b5-4436-b374-45f0a08372ba.PNG" width="250">
-	<img src="https://user-images.githubusercontent.com/49972425/172629415-dc2efac6-d3e5-46a4-a825-a07b1f5dae9a.PNG" width="250">
+	<img src="https://user-images.githubusercontent.com/49972425/172629098-17d7cf6b-d0b5-4436-b374-45f0a08372ba.PNG" width="300">
+	<img src="https://user-images.githubusercontent.com/49972425/172629415-dc2efac6-d3e5-46a4-a825-a07b1f5dae9a.PNG" width="300">
 </p>
 <p>
-	<img src="https://user-images.githubusercontent.com/49972425/172629807-84a41683-1b0b-4bc7-9306-2261f064c90d.PNG" width="250"> 
-	<img src="https://user-images.githubusercontent.com/49972425/172630294-31f9cd17-a5b4-4eb0-adc2-953676d7ecfe.PNG" width="250">
+	<img src="https://user-images.githubusercontent.com/49972425/172629807-84a41683-1b0b-4bc7-9306-2261f064c90d.PNG" width="300"> 
+	<img src="https://user-images.githubusercontent.com/49972425/172630294-31f9cd17-a5b4-4eb0-adc2-953676d7ecfe.PNG" width="300">
 </p>
 
 # Prerequisite
